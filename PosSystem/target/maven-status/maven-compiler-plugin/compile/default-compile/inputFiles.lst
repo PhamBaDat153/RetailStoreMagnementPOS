@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosSystem\src\main\java\com\doan\possystem\CustomerPanel.java
-C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosSystem\src\main\java\com\doan\possystem\Database.java
-C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosSystem\src\main\java\com\doan\possystem\EmployeePanel.java
-C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosSystem\src\main\java\com\doan\possystem\Home.java
-C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosSystem\src\main\java\com\doan\possystem\JpanelLoader.java
-C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosSystem\src\main\java\com\doan\possystem\PosSystem.java
-C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosSystem\src\main\java\com\doan\possystem\ProductPanel.java
-C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosSystem\src\main\java\com\doan\possystem\SupplierPanel.java
-=======
 D:\Code\Other\PosSystem\src\main\java\com\doan\possystem\CustomerPanel.java
 D:\Code\Other\PosSystem\src\main\java\com\doan\possystem\EmployeePanel.java
 D:\Code\Other\PosSystem\src\main\java\com\doan\possystem\Home.java
@@ -15,4 +5,3 @@ D:\Code\Other\PosSystem\src\main\java\com\doan\possystem\JpanelLoader.java
 D:\Code\Other\PosSystem\src\main\java\com\doan\possystem\PosSystem.java
 D:\Code\Other\PosSystem\src\main\java\com\doan\possystem\ProductPanel.java
 D:\Code\Other\PosSystem\src\main\java\com\doan\possystem\SupplierPanel.java
->>>>>>> cb3eead3d6ee4f6235952e7d00abd71facc542be

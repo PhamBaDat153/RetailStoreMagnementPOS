@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6f994341-df25-4332-ba07-4a49841dc2a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/PosSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/PosSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/update.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home.form" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/JpanelLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/JpanelLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/PosSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/PosSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/PosSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/PosSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/ProductPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/ProductPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/ProductPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/ProductPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/update.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2ud1IMPovWR7LWMIsxcYqcuaixm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Home.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f994341-df25-4332-ba07-4a49841dc2a3" name="Changes" comment="" />
+      <created>1742563558634</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742563558634</updated>
+    </task>
+    <servers />
+  </component>
+</project>

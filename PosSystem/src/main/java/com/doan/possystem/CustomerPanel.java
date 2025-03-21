@@ -126,11 +126,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         jLabel1.setText("SDT:");
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-<<<<<<< HEAD
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosSystem\\src\\main\\resources\\image\\save.png")); // NOI18N
-=======
         jButton1.setIcon(new javax.swing.ImageIcon("D:\\Code\\Other\\PosSystem\\src\\main\\resources\\image\\save.png")); // NOI18N
->>>>>>> cb3eead3d6ee4f6235952e7d00abd71facc542be
         jButton1.setText("Lưu");
         jButton1.setIconTextGap(5);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -140,11 +136,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-<<<<<<< HEAD
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosSystem\\src\\main\\resources\\image\\search x30.png")); // NOI18N
-=======
         jButton2.setIcon(new javax.swing.ImageIcon("D:\\Code\\Other\\PosSystem\\src\\main\\resources\\image\\search x30.png")); // NOI18N
->>>>>>> cb3eead3d6ee4f6235952e7d00abd71facc542be
         jButton2.setText("Tìm");
         jButton2.setIconTextGap(5);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -154,11 +146,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         });
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-<<<<<<< HEAD
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/update.png"))); // NOI18N
-=======
         jButton3.setIcon(new javax.swing.ImageIcon("D:\\Code\\Other\\PosSystem\\src\\main\\resources\\image\\update.png")); // NOI18N
->>>>>>> cb3eead3d6ee4f6235952e7d00abd71facc542be
         jButton3.setText("Cập nhật");
         jButton3.setIconTextGap(5);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -168,11 +156,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         });
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-<<<<<<< HEAD
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosSystem\\src\\main\\resources\\image\\delete.png")); // NOI18N
-=======
         jButton4.setIcon(new javax.swing.ImageIcon("D:\\Code\\Other\\PosSystem\\src\\main\\resources\\image\\delete.png")); // NOI18N
->>>>>>> cb3eead3d6ee4f6235952e7d00abd71facc542be
         jButton4.setText("Xóa");
         jButton4.setIconTextGap(5);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -188,8 +172,6 @@ public class CustomerPanel extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-<<<<<<< HEAD
-=======
                         .addGap(24, 24, 24)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -202,43 +184,11 @@ public class CustomerPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(c_name, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
->>>>>>> cb3eead3d6ee4f6235952e7d00abd71facc542be
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(jLabel3))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-<<<<<<< HEAD
-                                .addContainerGap()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 19, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(c_ID)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabel2))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel1)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(c_sdt, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                                    .addComponent(c_name))))
-                        .addGap(18, 18, 18)))
-=======
                                 .addGap(25, 25, 25)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -253,7 +203,6 @@ public class CustomerPanel extends javax.swing.JPanel {
                                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(6, 6, 6)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
->>>>>>> cb3eead3d6ee4f6235952e7d00abd71facc542be
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
