@@ -126,7 +126,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         jLabel1.setText("SDT:");
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\Code\\Other\\PosSystem\\src\\main\\resources\\image\\save.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosSystem\\src\\main\\resources\\image\\save.png")); // NOI18N
         jButton1.setText("Lưu");
         jButton1.setIconTextGap(5);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +136,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\Code\\Other\\PosSystem\\src\\main\\resources\\image\\search x30.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosSystem\\src\\main\\resources\\image\\search x30.png")); // NOI18N
         jButton2.setText("Tìm");
         jButton2.setIconTextGap(5);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +146,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         });
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("D:\\Code\\Other\\PosSystem\\src\\main\\resources\\image\\update.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosSystem\\src\\main\\resources\\image\\update.png")); // NOI18N
         jButton3.setText("Cập nhật");
         jButton3.setIconTextGap(5);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +156,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         });
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("D:\\Code\\Other\\PosSystem\\src\\main\\resources\\image\\delete.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosSystem\\src\\main\\resources\\image\\delete.png")); // NOI18N
         jButton4.setText("Xóa");
         jButton4.setIconTextGap(5);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
