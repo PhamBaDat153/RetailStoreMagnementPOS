@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.doan.pos;
+package com.doan.possystem;
 
 /**
  *
  * @author phamb
  */
-public class Pos {
+public class PosSystem {
 
     public static void main(String[] args) {
-        System.out.println("hello trung");
+        System.out.println("Hello World!");
     }
 }
