@@ -228,7 +228,7 @@ public class CustomerPanel extends javax.swing.JPanel {
                     .addComponent(jButton1)
                     .addComponent(jButton3)
                     .addComponent(jButton4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(275, Short.MAX_VALUE))
         );
 
         c_Search.addActionListener(new java.awt.event.ActionListener() {
@@ -257,11 +257,11 @@ public class CustomerPanel extends javax.swing.JPanel {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_Search, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                        .addComponent(c_Search, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -270,12 +270,11 @@ public class CustomerPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 84, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(c_Search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -302,6 +301,16 @@ public class CustomerPanel extends javax.swing.JPanel {
         String sdt = c_sdt.getText();
 
         try {
+            // Kiểm tra người dùng đã nhập dữ liệu chưa
+            if (name.equals("") || sdt.equals("")) {
+                JOptionPane.showMessageDialog(null, "Vui lòng nhập tên khách hàng và SDT");
+                return;
+            }
+            if (sdt.length() != 10) {
+                JOptionPane.showMessageDialog(null, "SDT phải bao gồm 10 số");
+                return;
+            }
+
             Statement statement = Database.myCon().createStatement();
             statement.executeUpdate("INSERT INTO customer(name,SDT) VALUES ('"+name+"','"+sdt+"')");
             JOptionPane.showMessageDialog(null, "Thêm khách hàng "+name+" với SDT: "+sdt+" thành công");
@@ -318,6 +327,12 @@ public class CustomerPanel extends javax.swing.JPanel {
         String search = c_ID.getText();
 
         try {
+            // Kiểm tra người dùng đã nhập dữ liệu chưa
+            if (search.equals("")) {
+                JOptionPane.showMessageDialog(null, "Vui lòng nhập ID khách hàng để tìm kiếm");
+                return;
+            }
+
             Statement statement = Database.myCon().createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM customer WHERE ID LIKE '%"+search+"%'");
 
@@ -341,6 +356,21 @@ public class CustomerPanel extends javax.swing.JPanel {
         String id = c_ID.getText();
 
         try {
+
+            // Kiểm tra người dùng đã nhập dữ liệu chưa
+            if (name.equals("") || sdt.equals("")) {
+                JOptionPane.showMessageDialog(null, "Vui lòng nhập tên khách hàng và SDT");
+                return;
+            }
+            if (sdt.length() != 10) {
+                JOptionPane.showMessageDialog(null, "SDT phải bao gồm 10 số");
+                return;
+            }
+            else if (id.equals("")) {
+                JOptionPane.showMessageDialog(null, "Vui lòng nhập ID khách hàng để cập nhật");
+                return;
+            }
+
             Statement statement = Database.myCon().createStatement();
             statement.executeUpdate("UPDATE customer SET name = '"+name+"', SDT = '"+sdt+"' WHERE ID = '"+id+"'");
             JOptionPane.showMessageDialog(null, "Câp nhật khách hàng với ID: "+id+" thành công");
@@ -356,6 +386,11 @@ public class CustomerPanel extends javax.swing.JPanel {
         String id = c_ID.getText();
 
         try {
+            // Kiểm tra người dùng đã nhập dữ liệu chưa
+            if (id.equals("")) {
+                JOptionPane.showMessageDialog(null, "Vui lòng nhập ID khách hàng để xóa");
+            }
+
             Statement statement = Database.myCon().createStatement();
             statement.executeUpdate("DELETE FROM customer WHERE ID = '"+id+"'");
             JOptionPane.showMessageDialog(null, "Xóa khách hàng với ID: "+id+" thành công");
