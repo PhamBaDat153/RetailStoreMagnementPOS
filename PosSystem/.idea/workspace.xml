@@ -8,18 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/EmployeePanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/EmployeePanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/EmployeePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/EmployeePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/SupplierPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/SupplierPanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/SupplierPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/SupplierPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/EmployeePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/SupplierPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/ProductPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/ProductPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/ProductPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/ProductPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
