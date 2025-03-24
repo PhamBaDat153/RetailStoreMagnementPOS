@@ -93,7 +93,7 @@ public class ProductPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Tên", "Mã vạch", "Giá", "Số lượng", "Mã NCU"
+                "ID", "Tên", "Giá", "Số lượng", "Mã vạch", "Mã NCU"
             }
         ));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -146,7 +146,7 @@ public class ProductPanel extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Mã vạch:");
+        jLabel1.setText("Giá:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Tên SP:");
@@ -207,7 +207,7 @@ public class ProductPanel extends javax.swing.JPanel {
         jLabel5.setText("Số lượng:");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("Giá:");
+        jLabel6.setText("Mã vạch:");
 
         p_price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,12 +256,13 @@ public class ProductPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel7))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(p_bcode)
@@ -293,12 +294,12 @@ public class ProductPanel extends javax.swing.JPanel {
                     .addComponent(p_bcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(p_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(p_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(p_qty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(p_qty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(s_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -424,7 +425,7 @@ public class ProductPanel extends javax.swing.JPanel {
             }
 
             Statement statement = Database.myCon().createStatement();
-            statement.executeUpdate("UPDATE product SET Name = '"+name+"', Bar_code = '"+code+"', price = '"+price+"', Qty = '"+quantity+"', SupID = '"+ncu+"' WHERE ID = '"+search+"'");
+            statement.executeUpdate("UPDATE product SET Name = '"+name+"', Bar_code = '"+quantity+"', price = '"+code+"', Qty = '"+price+"', SupID = '"+ncu+"' WHERE ID = '"+search+"'");
             JOptionPane.showMessageDialog(null, "Câp nhật sản phẩm với ID: "+search+" thành công");
         }catch (Exception e){
             System.out.println(e);
@@ -475,10 +476,11 @@ public class ProductPanel extends javax.swing.JPanel {
             }
 
             Statement statement = Database.myCon().createStatement();
-            statement.executeUpdate("INSERT INTO product(Name,Bar_code,price,Qty,SupID) VALUES ('"+name+"','"+code+"','"+price+"','"+quantity+"','"+ncu+"')");
+            statement.executeUpdate("INSERT INTO product(Name, Bar_code, Price, Qty, SupID) VALUES ('"
+                    + name + "','" + quantity + "','" + code + "','" + price + "','" + ncu + "')");
             JOptionPane.showMessageDialog(null, "Thêm sản phẩm mới thành công");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         // Reload table mỗi khi thực hiện hành động mới
