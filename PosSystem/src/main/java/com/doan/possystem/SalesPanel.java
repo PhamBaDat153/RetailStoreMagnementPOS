@@ -2,9 +2,7 @@ package com.doan.possystem;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Vector;
 
 /**
@@ -13,6 +11,7 @@ import java.util.Vector;
 public class SalesPanel extends javax.swing.JPanel {
 
     public static String barcode_c;
+    public static String CusID;
 
     public SalesPanel() {
         initComponents();
@@ -20,20 +19,61 @@ public class SalesPanel extends javax.swing.JPanel {
     }
 
     private void total_cart(){
+
+        // Tổng giá hóa đơn
         int numOfRow = jTable1.getRowCount();
         double total = 0;
+        int total_qty = 0;
+
         for (int i = 0; i < numOfRow; i++) {
-            total += Double.parseDouble(jTable1.getValueAt(i, 5).toString());
+            try {
+                // Sum total price (column 5)
+                Object priceValue = jTable1.getValueAt(i, 5);
+                if (priceValue != null) {
+                    total += Double.parseDouble(priceValue.toString());
+                }
+
+                // Sum total quantity (column 3)
+                Object qtyValue = jTable1.getValueAt(i, 3);
+                if (qtyValue != null) {
+                    total_qty += Integer.parseInt(qtyValue.toString());
+                }
+            } catch (NumberFormatException e) {
+                // Handle parse errors (log or show message)
+                System.err.println("Error parsing value at row " + i);
+            }
         }
+
         bill_total.setText(String.valueOf(total));
+        total_qty_label.setText(String.valueOf(total_qty));
+
     }
 
-    private void havetopay(){
-        // thêm số tiền đã trả
-        Double pay = Double.parseDouble(paid_amt.getText().toString());
-        Double total = Double.parseDouble(bill_total.getText().toString());
-        Double due = total - pay;
-        due_amt.setText(String.valueOf(due).toString());
+    private void havetopay() {
+        try {
+            // Get paid amount with validation
+            double pay = 0;
+            String paidText = paid_amt.getText();
+            if (paidText != null && !paidText.trim().isEmpty()) {
+                pay = Double.parseDouble(paidText);
+            }
+
+            // Get total amount with validation
+            double total = 0;
+            String totalText = bill_total.getText();
+            if (totalText != null && !totalText.trim().isEmpty()) {
+                total = Double.parseDouble(totalText);
+            }
+
+            // Calculate due amount
+            double due = total - pay;
+            due_amt.setText(String.valueOf(due));
+
+        } catch (NumberFormatException e) {
+            // Handle invalid number format
+            due_amt.setText("0.00");
+            JOptionPane.showMessageDialog(this, "Please enter valid numbers", "Input Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void dataload() {
@@ -66,6 +106,24 @@ public class SalesPanel extends javax.swing.JPanel {
         } catch (Exception e) {
             System.out.println(e);
         }
+
+        //load invoice đứng trước
+        try {
+            Statement statement = Database.myCon().createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM extra where exID = 1");
+
+            if (rs.next()) {
+                InID.setText(rs.getString("val"));
+            }
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+
+        Integer ID = Integer.parseInt(InID.getText()) + 1;
+        InID.setText(String.valueOf(ID));
+
+
+
     }
 
     @SuppressWarnings("unchecked")
@@ -104,6 +162,8 @@ public class SalesPanel extends javax.swing.JPanel {
         bill_total = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         due_amt = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        total_qty_label = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1030, 500));
@@ -156,6 +216,11 @@ public class SalesPanel extends javax.swing.JPanel {
 
         com_cus.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         com_cus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "mời chọn", " " }));
+        com_cus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                com_cusActionPerformed(evt);
+            }
+        });
 
         com_product.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         com_product.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "mời chọn", " " }));
@@ -374,6 +439,11 @@ public class SalesPanel extends javax.swing.JPanel {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Tổng sản phẩm:");
+
+        total_qty_label.setText("0");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -383,6 +453,10 @@ public class SalesPanel extends javax.swing.JPanel {
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(paid_amt, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(total_qty_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -393,9 +467,13 @@ public class SalesPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(paid_amt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(total_qty_label))
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8)
+                                .addComponent(paid_amt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -455,7 +533,117 @@ public class SalesPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // Gửi data về csdl
+        try {
+            DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+            int rowCount = tableModel.getRowCount();
+            for (int i = 0; i < rowCount; i++) {
+                String inID = tableModel.getValueAt(i, 0).toString();
+                String name = tableModel.getValueAt(i, 1).toString();
+                String bcode = tableModel.getValueAt(i, 2).toString();
+                String price = tableModel.getValueAt(i, 3).toString();
+                String qty = tableModel.getValueAt(i, 4).toString();
+                String total = tableModel.getValueAt(i, 5).toString();
+
+
+                // add vào table cart
+                Statement statement = Database.myCon().createStatement();
+                statement.executeUpdate("insert into Cart(InID,Name,Bar_code,quantity,unit_price,total_price) values('" + inID + "', '" + name + "', '" + bcode + "', '" + price + "', '" + qty + "', '" + total + "')");
+            }
+            JOptionPane.showMessageDialog(null, "Thêm đơn hàng thành công!");
+        } catch (Exception e) {
+            System.out.println();
+
+        }
+
+        try {
+            // Get input values
+            String invoiceID = InID.getText();
+            String cusName = com_cus.getSelectedItem().toString();
+
+            // Parse numeric values with validation
+            Integer totalQty = null;
+            Double totalPrice = null;
+            Double paidAmount = null;
+
+            try {
+                totalQty = total_qty_label.getText().isEmpty() ? null : Integer.parseInt(total_qty_label.getText());
+                totalPrice = bill_total.getText().isEmpty() ? null : Double.parseDouble(bill_total.getText());
+                paidAmount = paid_amt.getText().isEmpty() ? null : Double.parseDouble(paid_amt.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Lỗi không nhập đúng cú pháp", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Determine payment status
+            String paymentStatus;
+            if (totalPrice == null || paidAmount == null) {
+                paymentStatus = "đã trả"; // Default status
+            } else if (totalPrice > paidAmount) {
+                paymentStatus = "chưa trả";
+            } else {
+                paymentStatus = "trả thành công";
+            }
+
+            // Use PreparedStatement to prevent SQL injection
+            String sql = "INSERT INTO sale(InID, CusID, Cus_Name, total_quantity, total_price, status, balance) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+            try (Connection conn = Database.myCon();
+                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+                // Set parameters
+                pstmt.setString(1, invoiceID);
+                pstmt.setString(2, CusID);
+                pstmt.setString(3, cusName);
+
+                if (totalQty == null) {
+                    pstmt.setNull(4, Types.INTEGER);
+                } else {
+                    pstmt.setInt(4, totalQty);
+                }
+
+                if (totalPrice == null) {
+                    pstmt.setNull(5, Types.DECIMAL);
+                } else {
+                    pstmt.setDouble(5, totalPrice);
+                }
+
+                pstmt.setString(6, paymentStatus);
+
+                if (paidAmount == null) {
+                    pstmt.setNull(7, Types.DECIMAL);
+                } else {
+                    pstmt.setDouble(7, paidAmount);
+                }
+
+                // Execute the update
+                int rowsAffected = pstmt.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    JOptionPane.showMessageDialog(null, "Lưu vào doanh thu thành công!");
+                }
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Unexpected error: " + e.getMessage(),
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+        try {
+
+            String ID = InID.getText();
+            Statement statement = Database.myCon().createStatement();
+            statement.executeUpdate("Update extra set val='"+ID+"' where exID = 1");
+
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void p_qtyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_p_qtyKeyReleased
@@ -479,8 +667,8 @@ public class SalesPanel extends javax.swing.JPanel {
         v.add(InID.getText()); // mã hóa đơn
         v.add(com_product.getSelectedItem().toString()); // tên sản phẩm
         v.add(u_bcode.getText()); //mã vạch
-        v.add(u_price.getText()); // giá
-        v.add(p_qty.getText()); // số lượng
+        v.add(p_qty.getText()); // giá
+        v.add(u_price.getText()); // số lượng
         v.add(total_price.getText()); // tống giá
         tableModel.addRow(v);
         total_cart();
@@ -513,7 +701,23 @@ public class SalesPanel extends javax.swing.JPanel {
         havetopay();
     }//GEN-LAST:event_paid_amtKeyReleased
 
-    private void com_productActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void com_cusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_com_cusActionPerformed
+        // lấy ID khách
+        String name = com_cus.getSelectedItem().toString();
+
+        try {
+            Statement statement = Database.myCon().createStatement();
+            ResultSet rs = statement.executeQuery("SELECT ID,name FROM customer WHERE name = '" + name + "'");
+            if (rs.next()) {
+               CusID = rs.getString("ID");
+
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_com_cusActionPerformed
+
+    private void com_productActionPerformed(java.awt.event.ActionEvent evt) {
         //load giá sản phẩm
         String name = com_product.getSelectedItem().toString();
 
@@ -530,7 +734,7 @@ public class SalesPanel extends javax.swing.JPanel {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }            
+    }
 // vent_com_productActionPerformed
 
 
@@ -547,6 +751,7 @@ public class SalesPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -566,6 +771,7 @@ public class SalesPanel extends javax.swing.JPanel {
     private javax.swing.JTextField p_qty;
     private javax.swing.JTextField paid_amt;
     private javax.swing.JLabel total_price;
+    private javax.swing.JLabel total_qty_label;
     private javax.swing.JLabel u_bcode;
     private javax.swing.JLabel u_price;
     // End of variables declaration//GEN-END:variables

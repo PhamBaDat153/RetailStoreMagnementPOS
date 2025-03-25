@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f994341-df25-4332-ba07-4a49841dc2a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/CustomerPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/Home.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/Home.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/ProductPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/ProductPanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/ProductPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/ProductPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/SalesPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/SalesPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/doan/possystem/SalesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/doan/possystem/SalesPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/CustomerPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/Home.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/doan/possystem/ProductPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/doan/possystem/ProductPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -47,6 +45,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "main",
+    "ignore.preview.features.used": "true",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -81,15 +80,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/doan/possystem/SalesPanel.java</url>
-          <line>72</line>
-          <properties class="com.doan.possystem.SalesPanel" method="initComponents">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

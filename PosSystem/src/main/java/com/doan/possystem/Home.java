@@ -91,6 +91,11 @@ public class Home extends javax.swing.JFrame {
         jToggleButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jToggleButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosSystem\\src\\main\\resources\\image\\invo.png")); // NOI18N
         jToggleButton7.setText("Hóa đơn");
+        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton7ActionPerformed(evt);
+            }
+        });
 
         home_btn_group.add(jToggleButton8);
         jToggleButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -225,6 +230,12 @@ public class Home extends javax.swing.JFrame {
         SalesPanel sale = new SalesPanel();
         jLoader.jPanelLoader(panelLoader, sale);
     }//GEN-LAST:event_jToggleButton8ActionPerformed
+
+    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+        //invoice load
+        InvoicePanel invoice = new InvoicePanel();
+        jLoader.jPanelLoader(panelLoader, invoice);
+    }//GEN-LAST:event_jToggleButton7ActionPerformed
 
     public static void main(String args[]) {
 
