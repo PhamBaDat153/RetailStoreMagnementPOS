@@ -38,7 +38,14 @@
                       <Component id="jPanel1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="618" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane1" pref="652" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="customerNameSearchLabel" min="-2" pref="137" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="searchByNameTxtField" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -48,14 +55,21 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="472" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jPanel1" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="searchByNameTxtField" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="customerNameSearchLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="infomationPanel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -114,12 +128,12 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="nameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nameTxtField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nameTxtField" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="telephoneNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="telephoneNumberTxtField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="telephoneNumberTxtField" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -228,6 +242,9 @@
                   </Table>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dataTableMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -252,7 +269,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="searchButton" max="32767" attributes="0"/>
-                                  <Component id="searchTxtField" max="32767" attributes="0"/>
+                                  <Component id="searchByIDTxtField" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -268,11 +285,11 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="customerIDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="searchTxtField" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="searchByIDTxtField" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="searchButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -294,12 +311,13 @@
                 <Property name="text" type="java.lang.String" value="ID Kh&#xe1;ch h&#xe0;ng:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="searchTxtField">
+            <Component class="javax.swing.JTextField" name="searchByIDTxtField">
               <Properties>
                 <Property name="text" type="java.lang.String" value="nh&#xe2;p ID kh&#xe1;ch &#x111;&#x1ec3; hi&#x1ec7;n th&#xf4;ng tin"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchTxtFieldActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchByIDTxtFieldMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchByIDTxtFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="searchButton">
@@ -318,6 +336,24 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JTextField" name="searchByNameTxtField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="nh&#xe2;p t&#xea;n kh&#xe1;ch &#x111;&#x1ec3; l&#x1ecd;c th&#xf4;ng tin"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchByNameTxtFieldMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchByNameTxtFieldActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="searchByNameTxtFieldKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="customerNameSearchLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="L&#x1ecd;c t&#xea;n kh&#xe1;ch h&#xe0;ng:"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

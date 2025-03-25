@@ -1,6 +1,13 @@
 
 package Project.Frame;
+
+import Project.Function.JpanelLoader;
+import Project.Panel.CustomerPanel;
+
 public class HomeFrame extends javax.swing.JFrame {
+
+    public JpanelLoader jPanelLoader = new JpanelLoader();
+
     public HomeFrame() {
         initComponents();
         this.setExtendedState(HomeFrame.MAXIMIZED_BOTH);
@@ -201,7 +208,9 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ProductPanelLoadButtonActionPerformed
 
     private void customerPanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerPanelLoadButtonActionPerformed
-        // TODO add your handling code here:
+        // đưa trang khách hàng lên HomeFrame
+        CustomerPanel customerPanel = new CustomerPanel();
+        jPanelLoader.load(panelLoaderPanel,customerPanel);
     }//GEN-LAST:event_customerPanelLoadButtonActionPerformed
 
     private void EmployeePanelLoadButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeePanelLoadButtomActionPerformed
