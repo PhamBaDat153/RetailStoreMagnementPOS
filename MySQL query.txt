@@ -1,0 +1,26 @@
+create database pos;
+use pos;
+
+#Tạo bảng dữ liệu khách hàng:
+CREATE TABLE Customer (
+    customer_ID VARCHAR(10) PRIMARY KEY DEFAULT '',
+    customer_name NVARCHAR(50) NOT NULL,
+    telephone_number VARCHAR(10) NOT NULL UNIQUE
+);
+
+-- Tự tạo ID khách hàng
+DELIMITER //
+CREATE TRIGGER trg_customer_id
+BEFORE INSERT ON Customer
+FOR EACH ROW
+BEGIN
+    DECLARE next_num INT;
+    
+    -- Tìm số tiếp theo
+    SELECT COALESCE(MAX(CAST(SUBSTRING(customer_ID, 3) AS UNSIGNED)), 0) + 1 
+    INTO next_num FROM Customer;
+    
+    -- Gán ID mới với định dạng KHxxxxxxx
+    SET NEW.customer_ID = CONCAT('KH', LPAD(next_num, 7, '0'));
+END//
+DELIMITER ;
