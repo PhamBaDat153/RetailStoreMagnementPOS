@@ -151,16 +151,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="invoiceLabelinfo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="invoiceLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="invoiceTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="customerNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="customerNameTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="statusLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="statusComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="invoiceTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="customerNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="customerNameTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="statusLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="statusComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="invoiceLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="14" max="32767" attributes="0"/>
                   </Group>
