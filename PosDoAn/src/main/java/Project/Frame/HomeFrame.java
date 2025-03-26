@@ -2,10 +2,7 @@
 package Project.Frame;
 
 import Project.Function.JpanelLoader;
-import Project.Panel.CustomerPanel;
-import Project.Panel.EmployeePanel;
-import Project.Panel.ProductPanel;
-import Project.Panel.SupplierPanel;
+import Project.Panel.*;
 
 public class HomeFrame extends javax.swing.JFrame {
 
@@ -40,6 +37,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         homeFrameButtonGroup.add(customerPanelLoadButton);
         customerPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        customerPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\customer.png")); // NOI18N
         customerPanelLoadButton.setText("Khách hàng");
         customerPanelLoadButton.setAlignmentY(0.0F);
         customerPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -51,6 +49,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         homeFrameButtonGroup.add(SupplierPanelLoadButton);
         SupplierPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SupplierPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\supplier.png")); // NOI18N
         SupplierPanelLoadButton.setText("Nhà cung ứng");
         SupplierPanelLoadButton.setAlignmentY(0.0F);
         SupplierPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -62,6 +61,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         homeFrameButtonGroup.add(ProductPanelLoadButton);
         ProductPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ProductPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\product.png")); // NOI18N
         ProductPanelLoadButton.setText("Sản phẩm");
         ProductPanelLoadButton.setAlignmentY(0.0F);
         ProductPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -73,6 +73,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         homeFrameButtonGroup.add(EmployeePanelLoadButtom);
         EmployeePanelLoadButtom.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        EmployeePanelLoadButtom.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\emp.png")); // NOI18N
         EmployeePanelLoadButtom.setText("Nhân viên");
         EmployeePanelLoadButtom.setAlignmentY(0.0F);
         EmployeePanelLoadButtom.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -84,6 +85,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         homeFrameButtonGroup.add(SalesPanelLoadButton);
         SalesPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SalesPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\sales_menu.png")); // NOI18N
         SalesPanelLoadButton.setText("Giỏ hàng");
         SalesPanelLoadButton.setAlignmentY(0.0F);
         SalesPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -95,6 +97,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         homeFrameButtonGroup.add(InvoicePanelLoadButton);
         InvoicePanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InvoicePanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\invo.png")); // NOI18N
         InvoicePanelLoadButton.setText("Hóa đơn");
         InvoicePanelLoadButton.setAlignmentY(0.0F);
         InvoicePanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -106,6 +109,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
         homeFrameButtonGroup.add(ReportPanelLoadButton);
         ReportPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ReportPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\reports.png")); // NOI18N
         ReportPanelLoadButton.setText("Báo cáo");
         ReportPanelLoadButton.setAlignmentY(0.0F);
         ReportPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -148,7 +152,7 @@ public class HomeFrame extends javax.swing.JFrame {
                 .addComponent(InvoicePanelLoadButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ReportPanelLoadButton)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         panelLoaderPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -157,7 +161,7 @@ public class HomeFrame extends javax.swing.JFrame {
         panelLoaderPanel.setLayout(panelLoaderPanelLayout);
         panelLoaderPanelLayout.setHorizontalGroup(
             panelLoaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 896, Short.MAX_VALUE)
+            .addGap(0, 872, Short.MAX_VALUE)
         );
         panelLoaderPanelLayout.setVerticalGroup(
             panelLoaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,7 +235,9 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_SupplierPanelLoadButtonActionPerformed
 
     private void SalesPanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesPanelLoadButtonActionPerformed
-        // TODO add your handling code here:
+        // đưa trang giỏ hàng lên HomeFrame
+        SalesPanel salesPanel = new SalesPanel();
+        jPanelLoader.load(panelLoaderPanel,salesPanel);
     }//GEN-LAST:event_SalesPanelLoadButtonActionPerformed
 
     private void InvoicePanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InvoicePanelLoadButtonActionPerformed

@@ -101,7 +101,7 @@
                   <Component id="InvoicePanelLoadButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="ReportPanelLoadButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -114,6 +114,9 @@
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosDoAn\src\main\resources\Images\customer.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Kh&#xe1;ch h&#xe0;ng"/>
             <Property name="alignmentY" type="float" value="0.0"/>
@@ -131,6 +134,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosDoAn\src\main\resources\Images\supplier.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nh&#xe0; cung &#x1ee9;ng"/>
             <Property name="alignmentY" type="float" value="0.0"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
@@ -146,6 +152,9 @@
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosDoAn\src\main\resources\Images\product.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="S&#x1ea3;n ph&#x1ea9;m"/>
             <Property name="alignmentY" type="float" value="0.0"/>
@@ -163,6 +172,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosDoAn\src\main\resources\Images\emp.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nh&#xe2;n vi&#xea;n"/>
             <Property name="alignmentY" type="float" value="0.0"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
@@ -178,6 +190,9 @@
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosDoAn\src\main\resources\Images\sales_menu.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gi&#x1ecf; h&#xe0;ng"/>
             <Property name="alignmentY" type="float" value="0.0"/>
@@ -195,6 +210,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosDoAn\src\main\resources\Images\invo.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="H&#xf3;a &#x111;&#x1a1;n"/>
             <Property name="alignmentY" type="float" value="0.0"/>
             <Property name="horizontalAlignment" type="int" value="2"/>
@@ -210,6 +228,9 @@
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\phamb\OneDrive\Documents\GitHub\RetailStoreMagnementPOS\PosDoAn\src\main\resources\Images\reports.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="B&#xe1;o c&#xe1;o"/>
             <Property name="alignmentY" type="float" value="0.0"/>
@@ -233,7 +254,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="896" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="872" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
