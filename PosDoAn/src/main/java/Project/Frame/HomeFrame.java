@@ -4,6 +4,7 @@ package Project.Frame;
 import Project.Function.JpanelLoader;
 import Project.Panel.CustomerPanel;
 import Project.Panel.EmployeePanel;
+import Project.Panel.ProductPanel;
 import Project.Panel.SupplierPanel;
 
 public class HomeFrame extends javax.swing.JFrame {
@@ -206,7 +207,9 @@ public class HomeFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ProductPanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductPanelLoadButtonActionPerformed
-        // TODO add your handling code here:
+        // đưa trang sản phẩm lên HomeFrame
+        ProductPanel productPanel = new ProductPanel();
+        jPanelLoader.load(panelLoaderPanel,productPanel);
     }//GEN-LAST:event_ProductPanelLoadButtonActionPerformed
 
     private void customerPanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerPanelLoadButtonActionPerformed
