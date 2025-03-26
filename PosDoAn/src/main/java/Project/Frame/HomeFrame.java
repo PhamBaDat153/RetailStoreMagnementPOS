@@ -3,6 +3,7 @@ package Project.Frame;
 
 import Project.Function.JpanelLoader;
 import Project.Panel.CustomerPanel;
+import Project.Panel.EmployeePanel;
 import Project.Panel.SupplierPanel;
 
 public class HomeFrame extends javax.swing.JFrame {
@@ -215,7 +216,9 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_customerPanelLoadButtonActionPerformed
 
     private void EmployeePanelLoadButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeePanelLoadButtomActionPerformed
-        // TODO add your handling code here:
+        // đầu trang nhân viên lên HomeFrame
+        EmployeePanel employeePanel = new EmployeePanel();
+        jPanelLoader.load(panelLoaderPanel,employeePanel);
     }//GEN-LAST:event_EmployeePanelLoadButtomActionPerformed
 
     private void SupplierPanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SupplierPanelLoadButtonActionPerformed

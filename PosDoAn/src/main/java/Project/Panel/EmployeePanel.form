@@ -39,7 +39,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" pref="697" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="700" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="customerNameSearchLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -90,7 +90,6 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="informationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -100,8 +99,13 @@
                                       <Component id="nameTxtField" min="-2" pref="318" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="telephoneNumberLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="PositionLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="positionComboBox" min="-2" pref="300" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="passwordLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="saveButton" min="-2" pref="95" max="-2" attributes="0"/>
@@ -110,13 +114,19 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="deleteButton" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="telephoneNumberTxtField" min="-2" pref="318" max="-2" attributes="0"/>
+                                          <Component id="passwordTxtField" alignment="0" min="-2" pref="318" max="-2" attributes="0"/>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="telephoneNumberLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="telephoneNumberTxtField" min="-2" pref="318" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
+                          <Component id="informationLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -135,13 +145,23 @@
                           <Component id="telephoneNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="telephoneNumberTxtField" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="PositionLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="positionComboBox" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="passwordLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="passwordTxtField" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="saveButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="updateButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="129" max="32767" attributes="0"/>
+                      <EmptySpace pref="33" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -223,6 +243,41 @@
                 <Property name="text" type="java.lang.String" value="Th&#xf4;ng tin nh&#xe0; cung &#x1ee9;ng"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JTextField" name="passwordTxtField">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordTxtFieldActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="passwordLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="MK:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="PositionLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="V&#x1ecb; tr&#xed;:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="positionComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="3">
+                    <StringItem index="0" value="Qu&#x1ea3;n l&#xfd;"/>
+                    <StringItem index="1" value="T&#x1ea1;p v&#x1ee5;"/>
+                    <StringItem index="2" value="Thu ng&#xe2;n"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -235,10 +290,12 @@
             <Component class="javax.swing.JTable" name="dataTable">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="3" rowCount="4">
-                    <Column editable="true" title="ID nh&#xe0; cung &#x1ee9;ng" type="java.lang.Object"/>
+                  <Table columnCount="5" rowCount="4">
+                    <Column editable="true" title="ID nh&#xe2;n vi&#xea;n" type="java.lang.Object"/>
                     <Column editable="true" title="T&#xea;n" type="java.lang.Object"/>
                     <Column editable="true" title="S&#x1ed1; &#x111;i&#xea;n tho&#x1ea1;i" type="java.lang.Object"/>
+                    <Column editable="true" title="V&#x1ecb; tr&#xed;" type="java.lang.Object"/>
+                    <Column editable="true" title="M&#x1ead;t kh&#x1ea9;u" type="java.lang.Object"/>
                   </Table>
                 </Property>
               </Properties>
@@ -300,7 +357,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m th&#xf4;ng tin nh&#xe0; cung &#x1ee9;ng"/>
+                <Property name="text" type="java.lang.String" value="T&#xec;m ki&#x1ebf;m th&#xf4;ng tin nh&#xe2;n vi&#xea;n"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="supplierIDLabel">
@@ -308,12 +365,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="ID NCU:"/>
+                <Property name="text" type="java.lang.String" value="ID Nh&#xe2;n vi&#xea;n:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="searchByIDTxtField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="nh&#xe2;p ID nh&#xe0; cung &#x1ee9;ng &#x111;&#x1ec3; hi&#x1ec7;n th&#xf4;ng tin"/>
+                <Property name="text" type="java.lang.String" value="nh&#xe2;p ID nh&#xe2;n vi&#xea;n &#x111;&#x1ec3; hi&#x1ec7;n th&#xf4;ng tin"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchByIDTxtFieldMouseClicked"/>
@@ -338,7 +395,7 @@
         </Container>
         <Component class="javax.swing.JTextField" name="searchByNameTxtField">
           <Properties>
-            <Property name="text" type="java.lang.String" value="nh&#xe2;p t&#xea;n nh&#xe0; cung &#x1ee9;ng &#x111;&#x1ec3; l&#x1ecd;c th&#xf4;ng tin"/>
+            <Property name="text" type="java.lang.String" value="nh&#xe2;p t&#xea;n nh&#xe2;n vi&#xea;n &#x111;&#x1ec3; l&#x1ecd;c th&#xf4;ng tin"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="searchByNameTxtFieldMouseClicked"/>

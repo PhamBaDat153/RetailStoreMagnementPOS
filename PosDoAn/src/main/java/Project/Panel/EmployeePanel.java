@@ -8,18 +8,18 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class SupplierPanel extends javax.swing.JPanel {
-    public SupplierPanel() {
+public class EmployeePanel extends javax.swing.JPanel {
+    public EmployeePanel() {
         initComponents();
         loadTable();
     }
 
     // Hàm tạo ID mới
     private String generateNewId(Connection conn) throws SQLException {
-        String sql = "SELECT CONCAT('NCU', LPAD(COALESCE(MAX(CAST(SUBSTRING(supplier_ID, 3) AS UNSIGNED)), 0) + 1, 7, '0')) FROM supplier";
+        String sql = "SELECT CONCAT('NV', LPAD(COALESCE(MAX(CAST(SUBSTRING(employee_ID, 3) AS UNSIGNED)), 0) + 1, 7, '0')) FROM employee";
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
-            return rs.next() ? rs.getString(1) : "NCU0000001";
+            return rs.next() ? rs.getString(1) : "NV0000001";
         }
     }
 
@@ -29,12 +29,15 @@ public class SupplierPanel extends javax.swing.JPanel {
             DefaultTableModel model = (DefaultTableModel) dataTable.getModel();
             model.setRowCount(0);
             Statement statement = DatabaseConnector.connectDatabase().createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM supplier");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM employee");
             while (resultSet.next()) {
                 Object[] row = {
-                        resultSet.getString("supplier_ID"),
-                        resultSet.getString("supplier_name"),
-                        resultSet.getString("telephone_number")
+                        resultSet.getString("employee_ID"),
+                        resultSet.getString("employee_name"),
+                        resultSet.getString("telephone_number"),
+                        resultSet.getString("position"),
+                        resultSet.getString("password")
+
                 };
                 model.addRow(row);
             }
@@ -58,6 +61,10 @@ public class SupplierPanel extends javax.swing.JPanel {
         deleteButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
         informationLabel = new javax.swing.JLabel();
+        passwordTxtField = new javax.swing.JTextField();
+        passwordLabel = new javax.swing.JLabel();
+        PositionLabel = new javax.swing.JLabel();
+        positionComboBox = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         dataTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
@@ -128,6 +135,15 @@ public class SupplierPanel extends javax.swing.JPanel {
         informationLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         informationLabel.setText("Thông tin nhà cung ứng");
 
+
+        passwordLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        passwordLabel.setText("MK:");
+
+        PositionLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        PositionLabel.setText("Vị trí:");
+
+        positionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Quản lý", "Tạp vụ", "Thu ngân" }));
+
         javax.swing.GroupLayout infomationPanelLayout = new javax.swing.GroupLayout(infomationPanel);
         infomationPanel.setLayout(infomationPanelLayout);
         infomationPanelLayout.setHorizontalGroup(
@@ -135,7 +151,6 @@ public class SupplierPanel extends javax.swing.JPanel {
             .addGroup(infomationPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(infomationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(informationLabel)
                     .addGroup(infomationPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(infomationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,8 +159,12 @@ public class SupplierPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nameTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(infomationPanelLayout.createSequentialGroup()
-                                .addComponent(telephoneNumberLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PositionLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(positionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(infomationPanelLayout.createSequentialGroup()
+                                .addComponent(passwordLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(infomationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(infomationPanelLayout.createSequentialGroup()
                                         .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,8 +172,13 @@ public class SupplierPanel extends javax.swing.JPanel {
                                         .addComponent(updateButton)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(deleteButton))
-                                    .addComponent(telephoneNumberTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(passwordTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(infomationPanelLayout.createSequentialGroup()
+                                .addComponent(telephoneNumberLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(telephoneNumberTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(informationLabel))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         infomationPanelLayout.setVerticalGroup(
             infomationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,23 +193,31 @@ public class SupplierPanel extends javax.swing.JPanel {
                 .addGroup(infomationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(telephoneNumberLabel)
                     .addComponent(telephoneNumberTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(14, 14, 14)
+                .addGroup(infomationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PositionLabel)
+                    .addComponent(positionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addGroup(infomationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(passwordLabel)
+                    .addComponent(passwordTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(infomationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveButton)
                     .addComponent(updateButton)
                     .addComponent(deleteButton))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID nhà cung ứng", "Tên", "Số điên thoại"
+                "ID nhân viên", "Tên", "Số điên thoại", "Vị trí", "Mật khẩu"
             }
         ));
         dataTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -198,12 +230,12 @@ public class SupplierPanel extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         searchLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        searchLabel1.setText("Tìm kiếm thông tin nhà cung ứng");
+        searchLabel1.setText("Tìm kiếm thông tin nhân viên");
 
         supplierIDLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        supplierIDLabel.setText("ID NCU:");
+        supplierIDLabel.setText("ID Nhân viên:");
 
-        searchByIDTxtField.setText("nhâp ID nhà cung ứng để hiện thông tin");
+        searchByIDTxtField.setText("nhâp ID nhân viên để hiện thông tin");
         searchByIDTxtField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchByIDTxtFieldMouseClicked(evt);
@@ -215,7 +247,6 @@ public class SupplierPanel extends javax.swing.JPanel {
             }
 
             private void searchByIDTxtFieldActionPerformed(ActionEvent evt) {
-
             }
         });
 
@@ -258,7 +289,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        searchByNameTxtField.setText("nhâp tên nhà cung ứng để lọc thông tin");
+        searchByNameTxtField.setText("nhâp tên nhân viên để lọc thông tin");
         searchByNameTxtField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchByNameTxtFieldMouseClicked(evt);
@@ -292,7 +323,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
                     .addGroup(basePanelLayout.createSequentialGroup()
                         .addComponent(customerNameSearchLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -333,9 +364,11 @@ public class SupplierPanel extends javax.swing.JPanel {
         // Lưu thông tin vào csdl
         String name = nameTxtField.getText().trim();
         String telephoneNumber = telephoneNumberTxtField.getText().trim();
+        String password = passwordTxtField.getText().trim();
+        String position = positionComboBox.getSelectedItem().toString().trim();
 
         // Kiểm tra dữ liệu đầu vào
-        if (name.isEmpty() || telephoneNumber.isEmpty()) {
+        if (name.isEmpty() || telephoneNumber.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ thông tin");
             return;
         }
@@ -356,7 +389,7 @@ public class SupplierPanel extends javax.swing.JPanel {
             conn = DatabaseConnector.connectDatabase();
 
             // Sử dụng PreparedStatement để tránh SQL injection
-            String sql = "INSERT INTO supplier (supplier_ID, supplier_name, telephone_number) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO employee (employee_ID, employee_name, telephone_number, password, position) VALUES (?, ?, ?, ?, ?)";
 
             // Tạo customer_ID mới
             String newId = generateNewId(conn);
@@ -365,10 +398,12 @@ public class SupplierPanel extends javax.swing.JPanel {
             pstmt.setString(1, newId);
             pstmt.setString(2, name);
             pstmt.setString(3, telephoneNumber);
+            pstmt.setString(4, password);
+            pstmt.setString(5, position);
 
             pstmt.executeUpdate();
 
-            JOptionPane.showMessageDialog(null, "Thêm nhà cung ứng thành công");
+            JOptionPane.showMessageDialog(null, "Thêm nhân viên thành công");
 
         } catch (SQLException e) {
             if (e.getMessage().contains("Duplicate entry") && e.getMessage().contains("telephone_number")) {
@@ -395,7 +430,7 @@ public class SupplierPanel extends javax.swing.JPanel {
 
         // Kiểm tra dữ liệu đầu vào
         if (id.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập mã nhà cung ứng để tìm kiếm");
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập mã nhân viên để tìm kiếm");
             return;
         }
 
@@ -407,24 +442,28 @@ public class SupplierPanel extends javax.swing.JPanel {
             conn = DatabaseConnector.connectDatabase();
 
             // Sử dụng PreparedStatement để tránh SQL injection
-            String sql = "SELECT * FROM supplier WHERE supplier_ID = ?";
+            String sql = "SELECT * FROM employee WHERE employee_ID = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, id);
 
             resultSet = pstmt.executeQuery();
 
             if (resultSet.next()) {
-                nameTxtField.setText(resultSet.getString("supplier_name"));
+                nameTxtField.setText(resultSet.getString("employee_ID"));
                 telephoneNumberTxtField.setText(resultSet.getString("telephone_number"));
+                positionComboBox.setToolTipText(resultSet.getString("position"));
+                passwordTxtField.setText(resultSet.getString("password"));
             } else {
-                JOptionPane.showMessageDialog(null, "Không tìm thấy nhà cung ứng với mã: " + id);
+                JOptionPane.showMessageDialog(null, "Không tìm thấy nhân viên với mã: " + id);
                 // Xóa các trường nếu không tìm thấy
                 nameTxtField.setText("");
                 telephoneNumberTxtField.setText("");
+                positionComboBox.setToolTipText("");
+                passwordTxtField.setText("");
             }
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Lỗi khi tìm kiếm nhà cung ứng: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Lỗi khi tìm kiếm nhân viên: " + e.getMessage());
             e.printStackTrace();
         } finally {
             // Đóng các tài nguyên
@@ -445,14 +484,14 @@ public class SupplierPanel extends javax.swing.JPanel {
 
         // Validate dữ liệu
         if (Id.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập nhà cung ứng hàng cần xóa",
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập mã nhân viên cần xóa",
                     "Cảnh báo", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         // Xác nhận trước khi xóa
         int confirm = JOptionPane.showConfirmDialog(this,
-                "Bạn có chắc chắn muốn xóa nhà cung ứng " + Id + "?",
+                "Bạn có chắc chắn muốn xóa nhân viên " + Id + "?",
                 "Xác nhận xóa",
                 JOptionPane.YES_NO_OPTION);
 
@@ -467,45 +506,45 @@ public class SupplierPanel extends javax.swing.JPanel {
             conn = DatabaseConnector.connectDatabase();
 
             // Kiểm tra tồn tại khách hàng trước khi xóa
-            String checkSql = "SELECT supplier_name FROM supplier WHERE supplier_ID = ?";
+            String checkSql = "SELECT employee_name FROM employee WHERE employee_ID = ?";
             pstmt = conn.prepareStatement(checkSql);
             pstmt.setString(1, Id);
             ResultSet rs = pstmt.executeQuery();
 
             if (!rs.next()) {
-                JOptionPane.showMessageDialog(this, "Không tìm thấy nhà cung ứng với mã: " + Id,
+                JOptionPane.showMessageDialog(this, "Không tìm thấy nhân viên với mã: " + Id,
                         "Lỗi", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            String customerName = rs.getString("customer_name");
+            String customerName = rs.getString("employee_name");
 
             // Thực hiện xóa
-            String deleteSql = "DELETE FROM supplier WHERE supplier_ID = ?";
+            String deleteSql = "DELETE FROM employee WHERE employee_ID = ?";
             pstmt = conn.prepareStatement(deleteSql);
             pstmt.setString(1, Id);
 
             int rowsAffected = pstmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(this, "Đã xóa thành công nhà cung ứng: " + customerName,
+                JOptionPane.showMessageDialog(this, "Đã xóa thành công nhân viên: " + customerName,
                         "Thành công", JOptionPane.INFORMATION_MESSAGE);
                 // Clear các trường nhập liệu sau khi xóa
                 searchByIDTxtField.setText("");
                 nameTxtField.setText("");
                 telephoneNumberTxtField.setText("");
             } else {
-                JOptionPane.showMessageDialog(this, "Không thể xóa nhà cung ứng",
+                JOptionPane.showMessageDialog(this, "Không thể xóa nhân viên",
                         "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
 
         } catch (SQLException e) {
             // Kiểm tra nếu có ràng buộc khóa ngoại
             if (e.getMessage().contains("a foreign key constraint fails")) {
-                JOptionPane.showMessageDialog(this, "Không thể xóa vì nhà cung ứng đã có dữ liệu liên quan",
+                JOptionPane.showMessageDialog(this, "Không thể xóa vì nhân viên đã có dữ liệu liên quan",
                         "Lỗi", JOptionPane.ERROR_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, "Lỗi khi xóa nhà cung ứng: " + e.getMessage(),
+                JOptionPane.showMessageDialog(this, "Lỗi khi xóa nhân viên: " + e.getMessage(),
                         "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
             e.printStackTrace();
@@ -522,80 +561,82 @@ public class SupplierPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-            //Cập nhật thông tin.
-            // Lấy thông tin từ các trường nhập liệu
-            String Id = searchByIDTxtField.getText().trim();
-            String name = nameTxtField.getText().trim();
-            String phone = telephoneNumberTxtField.getText().trim();
+        // Cập nhật thông tin nhân viên
+        String Id = searchByIDTxtField.getText().trim();
+        String name = nameTxtField.getText().trim();
+        String phone = telephoneNumberTxtField.getText().trim();
+        String position = positionComboBox.getSelectedItem().toString().trim();
+        String password = passwordTxtField.getText().trim();
 
-            // Kiểm tra dữ liệu
-            if (Id.isEmpty() || name.isEmpty() || phone.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+// Kiểm tra dữ liệu
+        if (Id.isEmpty() || name.isEmpty() || phone.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else if (phone.length() != 10) {
+            JOptionPane.showMessageDialog(this, "SĐT phải bao gồm 10 chữ số", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        else if(!phone.matches("\\d+")) {
+            JOptionPane.showMessageDialog(this, "Số điện thoại chỉ được chứa chữ số", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = DatabaseConnector.connectDatabase();
+
+            // Kiểm tra tồn tại nhân viên
+            String checkSql = "SELECT 1 FROM employee WHERE employee_ID = ?";
+            pstmt = conn.prepareStatement(checkSql);
+            pstmt.setString(1, Id);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (!rs.next()) {
+                JOptionPane.showMessageDialog(this, "Không tìm thấy nhân viên với mã: " + Id,
+                        "Lỗi", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-           else if (phone.length() != 10) {
-               JOptionPane.showMessageDialog(this, "SĐT phải bao gồm 10 chữ số", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
-               return;
-           }
 
-            else if(!phone.matches("\\d+")) {
-                JOptionPane.showMessageDialog(this, "Số điện thoại chỉ được chứa chữ số", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
-                return;
+            // Cập nhật thông tin
+            String updateSql = "UPDATE employee SET employee_name = ?, telephone_number = ?, position = ?, password = ? WHERE employee_ID = ?";
+            pstmt = conn.prepareStatement(updateSql);
+            pstmt.setString(1, name);
+            pstmt.setString(2, phone);
+            pstmt.setString(3, position);  // Đã sửa từ vị trí 4 về 3
+            pstmt.setString(4, password);  // Đã sửa từ vị trí 5 về 4
+            pstmt.setString(5, Id);        // Đã sửa từ vị trí 3 về 5
+
+            int rowsAffected = pstmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(this, "Cập nhật thông tin thành công!",
+                        "Thành công", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Không thể cập nhật thông tin",
+                        "Lỗi", JOptionPane.ERROR_MESSAGE);
             }
 
-            Connection conn = null;
-            PreparedStatement pstmt = null;
-
+        } catch (SQLException e) {
+            if (e.getMessage().contains("Duplicate entry") && e.getMessage().contains("telephone_number")) {
+                JOptionPane.showMessageDialog(this, "Số điện thoại đã tồn tại trong hệ thống",
+                        "Lỗi", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "Lỗi khi cập nhật: " + e.getMessage(),
+                        "Lỗi", JOptionPane.ERROR_MESSAGE);
+            }
+            e.printStackTrace();
+        } finally {
+            // Đóng kết nối
             try {
-                conn = DatabaseConnector.connectDatabase();
-
-                // Kiểm tra xem nhà cung ứng có tồn tại không
-                String checkSql = "SELECT 1 FROM supplier WHERE supplier_ID = ?";
-                pstmt = conn.prepareStatement(checkSql);
-                pstmt.setString(1, Id);
-                ResultSet rs = pstmt.executeQuery();
-
-                if (!rs.next()) {
-                    JOptionPane.showMessageDialog(this, "Không tìm thấy nhà cung ứng với mã: " + Id,
-                            "Lỗi", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-
-                // Cập nhật thông tin
-                String updateSql = "UPDATE supplier SET supplier_name = ?, telephone_number = ? WHERE supplier_ID = ?";
-                pstmt = conn.prepareStatement(updateSql);
-                pstmt.setString(1, name);
-                pstmt.setString(2, phone);
-                pstmt.setString(3, Id);
-
-                int rowsAffected = pstmt.executeUpdate();
-
-                if (rowsAffected > 0) {
-                    JOptionPane.showMessageDialog(this, "Cập nhật thông tin thành công!",
-                            "Thành công", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, "Không thể cập nhật thông tin",
-                            "Lỗi", JOptionPane.ERROR_MESSAGE);
-                }
-
-            } catch (SQLException e) {
-                if (e.getMessage().contains("Duplicate entry") && e.getMessage().contains("telephone_number")) {
-                    JOptionPane.showMessageDialog(this, "Số điện thoại đã tồn tại trong hệ thống",
-                            "Lỗi", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, "Lỗi khi cập nhật: " + e.getMessage(),
-                            "Lỗi", JOptionPane.ERROR_MESSAGE);
-                }
-                e.printStackTrace();
-            } finally {
-                // Đóng kết nối
-                try {
-                    if (pstmt != null) pstmt.close();
-                    if (conn != null) conn.close();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
             }
+        }
         loadTable();
     }//GEN-LAST:event_updateButtonActionPerformed
 
@@ -612,6 +653,8 @@ public class SupplierPanel extends javax.swing.JPanel {
             searchByIDTxtField.setText(dataTable.getValueAt(row, 0).toString());
             nameTxtField.setText(dataTable.getValueAt(row, 1).toString());
             telephoneNumberTxtField.setText(dataTable.getValueAt(row, 2).toString());
+            positionComboBox.setSelectedItem(dataTable.getValueAt(row, 3).toString());
+            passwordTxtField.setText(dataTable.getValueAt(row, 4).toString());
         }
     }//GEN-LAST:event_dataTableMouseClicked
 
@@ -621,14 +664,14 @@ public class SupplierPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_searchByNameTxtFieldMouseClicked
 
     private void searchByNameTxtFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchByNameTxtFieldKeyReleased
-        // nhập tên nhà cung ứng để lọc bảng
+        // nhập tên để lọc bảng
         try {
             DefaultTableModel model = (DefaultTableModel) dataTable.getModel();
             Statement statement = DatabaseConnector.connectDatabase().createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT supplier_ID, supplier_name, telephone_number FROM supplier WHERE supplier_name LIKE '%" + searchByNameTxtField.getText() + "%'");
+            ResultSet resultSet = statement.executeQuery("SELECT employee_ID, employee_name, telephone_number, position, password FROM employee WHERE employee_name LIKE '%" + searchByNameTxtField.getText() + "%'");
             model.setRowCount(0);
             while (resultSet.next()) {
-                model.addRow(new Object[]{resultSet.getString("supplier_ID"), resultSet.getString("supplier_name"), resultSet.getString("telephone_number")});
+                model.addRow(new Object[]{resultSet.getString("employee_ID"), resultSet.getString("employee_name"), resultSet.getString("telephone_number"), resultSet.getString("position"), resultSet.getString("password")});
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -639,6 +682,7 @@ public class SupplierPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel PositionLabel;
     private javax.swing.JPanel basePanel;
     private javax.swing.JLabel customerNameSearchLabel;
     private javax.swing.JTable dataTable;
@@ -649,6 +693,9 @@ public class SupplierPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameTxtField;
+    private javax.swing.JLabel passwordLabel;
+    private javax.swing.JTextField passwordTxtField;
+    private javax.swing.JComboBox<String> positionComboBox;
     private javax.swing.JButton saveButton;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchByIDTxtField;
