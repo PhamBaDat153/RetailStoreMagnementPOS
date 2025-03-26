@@ -4,6 +4,8 @@ package Project.Frame;
 import Project.Function.JpanelLoader;
 import Project.Panel.*;
 
+import java.sql.SQLException;
+
 public class HomeFrame extends javax.swing.JFrame {
 
     public JpanelLoader jPanelLoader = new JpanelLoader();
@@ -103,7 +105,11 @@ public class HomeFrame extends javax.swing.JFrame {
         InvoicePanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         InvoicePanelLoadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InvoicePanelLoadButtonActionPerformed(evt);
+                try {
+                    InvoicePanelLoadButtonActionPerformed(evt);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -240,8 +246,10 @@ public class HomeFrame extends javax.swing.JFrame {
         jPanelLoader.load(panelLoaderPanel,salesPanel);
     }//GEN-LAST:event_SalesPanelLoadButtonActionPerformed
 
-    private void InvoicePanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InvoicePanelLoadButtonActionPerformed
-        // TODO add your handling code here:
+    private void InvoicePanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_InvoicePanelLoadButtonActionPerformed
+        // đưa trang hóa đơn lên HomeFrame
+        InvoicePanel invoicePanel = new InvoicePanel();
+        jPanelLoader.load(panelLoaderPanel,invoicePanel);
     }//GEN-LAST:event_InvoicePanelLoadButtonActionPerformed
 
     private void ReportPanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportPanelLoadButtonActionPerformed
