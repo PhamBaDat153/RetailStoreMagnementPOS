@@ -1,1 +1,64 @@
+package Project;
+
+import javax.swing.*;
+import Project.Panel.CustomerPanel;
+import Project.Panel.EmployeePanel;
+import Project.Panel.ProductPanel;
+import Project.Panel.ReportPanel;
+import Project.Panel.SalesPanel;
+import Project.Panel.SupplierPanel;
+import Project.Panel.InvoicePanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Main {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Ứng dụng quản lý");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(800, 600);
+            frame.setLocationRelativeTo(null); // Căn giữa màn hình
+
+            // Tạo thanh menu
+            JMenuBar menuBar = new JMenuBar();
+            JMenu menu = new JMenu("Chọn Panel");
+
+            // Các menu item để chuyển đổi giữa các panel
+            JMenuItem customerItem = new JMenuItem("Customer Panel");
+            JMenuItem employeeItem = new JMenuItem("Employee Panel");
+            JMenuItem productItem = new JMenuItem("Product Panel");
+            JMenuItem reportItem = new JMenuItem("Report Panel");
+            JMenuItem salesItem = new JMenuItem("Sales Panel");
+            JMenuItem supplierItem = new JMenuItem("Supplier Panel");
+            JMenuItem invoiceItem = new JMenuItem("Invoice Panel");
+
+            // Panel chính để thay đổi nội dung
+            JPanel mainPanel = new JPanel();
+            frame.setContentPane(mainPanel);
+
+            // Xử lý sự kiện khi chọn panel
+            customerItem.addActionListener(e -> frame.setContentPane(new CustomerPanel()));
+            employeeItem.addActionListener(e -> frame.setContentPane(new EmployeePanel()));
+            productItem.addActionListener(e -> frame.setContentPane(new ProductPanel()));
+            reportItem.addActionListener(e -> frame.setContentPane(new ReportPanel()));
+            salesItem.addActionListener(e -> frame.setContentPane(new SalesPanel()));
+            supplierItem.addActionListener(e -> frame.setContentPane(new SupplierPanel()));
+            invoiceItem.addActionListener(e -> frame.setContentPane(new InvoicePanel()));
+
+            // Thêm các item vào menu
+            menu.add(customerItem);
+            menu.add(employeeItem);
+            menu.add(productItem);
+            menu.add(reportItem);
+            menu.add(salesItem);
+            menu.add(supplierItem);
+            menu.add(invoiceItem);
+            menuBar.add(menu);
+            frame.setJMenuBar(menuBar);
+
+            // Hiển thị frame
+            frame.setVisible(true);
+        });
+    }
+}
 
