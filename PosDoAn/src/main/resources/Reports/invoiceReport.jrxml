@@ -1,0 +1,353 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="invoiceReport" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e7eebaa4-068b-407f-bf7a-d4c2e72a1292">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="cG9zLnNhbGVzIEFTICw5NiwxMzgsMGM2MjMwOTktN2MwNC00N2NlLTg3ZmQtNzFlNTcyNTkxMjg2&#xa;Ow=="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Pos"/>
+	<style name="Title" fontName="Arial" fontSize="26.0" bold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18.0"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12.0" bold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12.0"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#ACE673">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#DAE6CF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<dataset name="Dataset1" uuid="dee8c66b-6f12-4126-9d72-fe804904b50e">
+		<property name="com.jaspersoft.studio.data.sql.tables" value="cG9zLnNhbGVzIEFTICwyMzUsMjAxLGNkZGU3NTkzLWZkZmMtNGNlNC05MGFkLWI3ZTQxZGFlOGZi&#xa;ZTs="/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Pos"/>
+		<query language="SQL"><![CDATA[SELECT `sale_Id`,
+	`invoice_ID`,
+	`customer_ID`,
+	customer_name,
+	total_quantity,
+	total_bill,
+	status,
+	change_or_lack
+FROM pos.sales]]></query>
+		<field name="sale_Id" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="sale_Id"/>
+			<property name="com.jaspersoft.studio.field.label" value="sale_Id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		</field>
+		<field name="invoice_ID" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="invoice_ID"/>
+			<property name="com.jaspersoft.studio.field.label" value="invoice_ID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		</field>
+		<field name="customer_ID" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="customer_ID"/>
+			<property name="com.jaspersoft.studio.field.label" value="customer_ID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		</field>
+		<field name="customer_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="customer_name"/>
+			<property name="com.jaspersoft.studio.field.label" value="customer_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		</field>
+		<field name="total_quantity" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="total_quantity"/>
+			<property name="com.jaspersoft.studio.field.label" value="total_quantity"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		</field>
+		<field name="total_bill" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="total_bill"/>
+			<property name="com.jaspersoft.studio.field.label" value="total_bill"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		</field>
+		<field name="status" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="status"/>
+			<property name="com.jaspersoft.studio.field.label" value="status"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		</field>
+		<field name="change_or_lack" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="change_or_lack"/>
+			<property name="com.jaspersoft.studio.field.label" value="change_or_lack"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+		</field>
+		<group name="sale_Id">
+			<expression><![CDATA[$F{sale_Id}]]></expression>
+		</group>
+		<group name="invoice_ID">
+			<expression><![CDATA[$F{invoice_ID}]]></expression>
+		</group>
+		<group name="customer_ID">
+			<expression><![CDATA[$F{customer_ID}]]></expression>
+		</group>
+		<group name="customer_name">
+			<expression><![CDATA[$F{customer_name}]]></expression>
+		</group>
+		<group name="total_quantity">
+			<expression><![CDATA[$F{total_quantity}]]></expression>
+		</group>
+		<group name="total_bill">
+			<expression><![CDATA[$F{total_bill}]]></expression>
+		</group>
+		<group name="status">
+			<expression><![CDATA[$F{status}]]></expression>
+		</group>
+		<group name="change_or_lack">
+			<expression><![CDATA[$F{change_or_lack}]]></expression>
+		</group>
+	</dataset>
+	<query language="SQL"><![CDATA[SELECT `sale_Id`, `invoice_ID`, `customer_id`, customer_name, total_quantity, total_bill, status, change_or_lack 
+FROM pos.sales;
+]]></query>
+	<field name="sale_Id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sale_Id"/>
+		<property name="com.jaspersoft.studio.field.label" value="sale_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="invoice_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="invoice_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="invoice_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="customer_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="customer_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="customer_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="customer_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="customer_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="total_quantity" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="total_quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="total_bill" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total_bill"/>
+		<property name="com.jaspersoft.studio.field.label" value="total_bill"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<field name="change_or_lack" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="change_or_lack"/>
+		<property name="com.jaspersoft.studio.field.label" value="change_or_lack"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sales"/>
+	</field>
+	<group name="Group1">
+		<expression><![CDATA[$F{sale_Id}]]></expression>
+		<groupFooter>
+			<band height="240">
+				<element kind="component" uuid="163ed8ae-da5c-45a4-aac4-55bfae0a3006" x="-2" y="-10" width="555" height="250">
+					<component kind="table">
+						<datasetRun uuid="93440ee9-0457-4cff-b023-9e3cd283a2c0" subDataset="Dataset1">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+						<column kind="single" uuid="c03c3535-5577-47d0-8074-d898f9a9aab0" width="60">
+							<tableHeader height="30" style="Table_TH"/>
+							<tableFooter height="30" style="Table_TH"/>
+							<columnHeader height="30" style="Table_CH">
+								<element kind="staticText" uuid="06efcf5a-e4b0-46b5-8e88-95dec30522df" x="0" y="0" width="60" height="30">
+									<text><![CDATA[sale_Id]]></text>
+								</element>
+							</columnHeader>
+							<columnFooter height="30" style="Table_CH"/>
+							<detailCell height="30" style="Table_TD">
+								<element kind="textField" uuid="c9d38db2-88b4-42f4-9ff1-c3f52f1b04c8" x="0" y="0" width="60" height="30">
+									<expression><![CDATA[$F{sale_Id}]]></expression>
+								</element>
+							</detailCell>
+						</column>
+						<column kind="single" uuid="e2afc9aa-9d0f-48d3-9714-0f0d1a5ee68e" width="60">
+							<tableHeader height="30" style="Table_TH"/>
+							<tableFooter height="30" style="Table_TH"/>
+							<columnHeader height="30" style="Table_CH">
+								<element kind="staticText" uuid="ad426c44-86f3-4802-a87a-a847dc772db6" x="0" y="0" width="60" height="30">
+									<text><![CDATA[invoice_ID]]></text>
+								</element>
+							</columnHeader>
+							<columnFooter height="30" style="Table_CH"/>
+							<detailCell height="30" style="Table_TD">
+								<element kind="textField" uuid="edcdf282-ebda-4e2f-b589-adf1cbedf1ba" x="0" y="0" width="60" height="30">
+									<expression><![CDATA[$F{invoice_ID}]]></expression>
+								</element>
+							</detailCell>
+						</column>
+						<column kind="single" uuid="6e7648f1-b168-4fb0-9f83-bf8f5b04a95f" width="60">
+							<tableHeader height="30" style="Table_TH"/>
+							<tableFooter height="30" style="Table_TH"/>
+							<columnHeader height="30" style="Table_CH">
+								<element kind="staticText" uuid="484462da-a0b9-48f8-b3c1-7557625e9b81" x="0" y="0" width="60" height="30">
+									<text><![CDATA[customer_ID]]></text>
+								</element>
+							</columnHeader>
+							<columnFooter height="30" style="Table_CH"/>
+							<detailCell height="30" style="Table_TD">
+								<element kind="textField" uuid="e777812f-5b1a-4a69-88bc-9eff8999be18" x="0" y="0" width="60" height="30">
+									<expression><![CDATA[$F{customer_ID}]]></expression>
+								</element>
+							</detailCell>
+						</column>
+						<column kind="single" uuid="c6238355-3db0-492d-9544-c6ede5324d52" width="80">
+							<tableHeader height="30" style="Table_TH"/>
+							<tableFooter height="30" style="Table_TH"/>
+							<columnHeader height="30" style="Table_CH">
+								<element kind="staticText" uuid="d6f50873-58ec-4375-a1ce-fc2e324c7a4c" x="0" y="0" width="80" height="30">
+									<text><![CDATA[customer_name]]></text>
+								</element>
+							</columnHeader>
+							<columnFooter height="30" style="Table_CH"/>
+							<detailCell height="30" style="Table_TD">
+								<element kind="textField" uuid="7ceb4600-29a4-405b-8652-9944b774d71f" x="0" y="0" width="80" height="30">
+									<expression><![CDATA[$F{customer_name}]]></expression>
+								</element>
+							</detailCell>
+						</column>
+						<column kind="single" uuid="af4f6204-8711-4c63-ac2a-a9b4ff8f76ca" width="80">
+							<tableHeader height="30" style="Table_TH"/>
+							<tableFooter height="30" style="Table_TH"/>
+							<columnHeader height="30" style="Table_CH">
+								<element kind="staticText" uuid="184f11b2-9289-497a-96ff-0daf5aa77b8b" x="0" y="0" width="80" height="30">
+									<text><![CDATA[total_quantity]]></text>
+								</element>
+							</columnHeader>
+							<columnFooter height="30" style="Table_CH"/>
+							<detailCell height="30" style="Table_TD">
+								<element kind="textField" uuid="5a1b8364-838a-42c1-9b44-b9e43b25b879" x="0" y="0" width="80" height="30">
+									<expression><![CDATA[$F{total_quantity}]]></expression>
+								</element>
+							</detailCell>
+						</column>
+						<column kind="single" uuid="0733bf9c-5302-4edc-8853-5067e9844ecd" width="60">
+							<tableHeader height="30" style="Table_TH"/>
+							<tableFooter height="30" style="Table_TH"/>
+							<columnHeader height="30" style="Table_CH">
+								<element kind="staticText" uuid="5d9a7a00-d7f2-4ed8-a6c0-404c51efd0a6" x="0" y="0" width="60" height="30">
+									<text><![CDATA[total_bill]]></text>
+								</element>
+							</columnHeader>
+							<columnFooter height="30" style="Table_CH"/>
+							<detailCell height="30" style="Table_TD">
+								<element kind="textField" uuid="da2f8be8-0ef9-4c14-af14-d86c596a0420" x="0" y="0" width="60" height="30">
+									<expression><![CDATA[$F{total_bill}]]></expression>
+								</element>
+							</detailCell>
+						</column>
+						<column kind="single" uuid="cac7164b-70e0-4944-af40-154eb3182181" width="60">
+							<tableHeader height="30" style="Table_TH"/>
+							<tableFooter height="30" style="Table_TH"/>
+							<columnHeader height="30" style="Table_CH">
+								<element kind="staticText" uuid="64c2ea86-4655-419e-9028-e18acbf1c1ec" x="0" y="0" width="60" height="30">
+									<text><![CDATA[status]]></text>
+								</element>
+							</columnHeader>
+							<columnFooter height="30" style="Table_CH"/>
+							<detailCell height="30" style="Table_TD">
+								<element kind="textField" uuid="77f9c17c-6dd0-4366-8762-0bad9345f1ac" x="0" y="0" width="60" height="30">
+									<expression><![CDATA[$F{status}]]></expression>
+								</element>
+							</detailCell>
+						</column>
+						<column kind="single" uuid="cb5c1682-44c6-40b6-92a1-c30eaae6ebc5" width="95">
+							<tableHeader height="30" style="Table_TH"/>
+							<tableFooter height="30" style="Table_TH"/>
+							<columnHeader height="30" style="Table_CH">
+								<element kind="staticText" uuid="ec2eb463-c842-4228-9d1c-f09399a692ba" x="0" y="0" width="95" height="30">
+									<text><![CDATA[change_or_lack]]></text>
+								</element>
+							</columnHeader>
+							<columnFooter height="30" style="Table_CH"/>
+							<detailCell height="30" style="Table_TD">
+								<element kind="textField" uuid="fed4509d-54b9-49d9-98b8-e0a92e0a852e" x="0" y="0" width="95" height="30">
+									<expression><![CDATA[$F{change_or_lack}]]></expression>
+								</element>
+							</detailCell>
+						</column>
+					</component>
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</element>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<expression><![CDATA[$F{invoice_ID}]]></expression>
+	</group>
+	<group name="customer_id">
+		<expression><![CDATA[$F{customer_id}]]></expression>
+	</group>
+	<group name="customer_name">
+		<expression><![CDATA[$F{customer_name}]]></expression>
+	</group>
+	<group name="total_quantity">
+		<expression><![CDATA[$F{total_quantity}]]></expression>
+	</group>
+	<group name="total_bill">
+		<expression><![CDATA[$F{total_bill}]]></expression>
+	</group>
+	<group name="status">
+		<expression><![CDATA[$F{status}]]></expression>
+	</group>
+	<group name="change_or_lack">
+		<expression><![CDATA[$F{change_or_lack}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<title height="70" splitType="Stretch">
+		<element kind="image" uuid="d7cb9de5-f1d6-4e9a-8441-72f5e2127742" x="275" y="0" width="300" height="64">
+			<expression><![CDATA["leaf_banner_green.png"]]></expression>
+		</element>
+		<element kind="staticText" uuid="3eb8e1ab-7e38-4368-89db-62b6501a8c67" x="0" y="13" width="263" height="33" vTextAlign="Middle" style="Title">
+			<text><![CDATA[Green Store Report]]></text>
+		</element>
+	</title>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader height="36" splitType="Stretch">
+		<element kind="line" uuid="d69c6691-e92e-45c5-bf2d-c1dc15dabb91" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+		<element kind="staticText" uuid="0b5308cc-82cf-49a0-8011-6f875d4c5e32" x="0" y="7" width="174" height="22" style="SubTitle">
+			<text><![CDATA[invoice report]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch"/>
+	</detail>
+	<columnFooter height="4" splitType="Stretch">
+		<element kind="line" uuid="02519f40-8679-4e40-a1f1-699bc025a206" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+	</columnFooter>
+	<pageFooter height="20" splitType="Stretch">
+		<element kind="textField" uuid="6f13e17d-4b46-4ede-ab63-9d2685ec9c16" x="433" y="0" width="80" height="20" fontSize="10.0" bold="false" hTextAlign="Right" style="Column header">
+			<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+		</element>
+		<element kind="textField" uuid="6857db7e-824a-4cda-b8dc-fe5c95aca145" x="513" y="0" width="40" height="20" fontSize="10.0" evaluationTime="Report" bold="false" style="Column header">
+			<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="ef9fc35f-c45f-4ec6-a5cc-ec2020109ea7" x="0" y="0" width="197" height="20" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" style="Column header">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</pageFooter>
+	<summary splitType="Stretch"/>
+</jasperReport>
