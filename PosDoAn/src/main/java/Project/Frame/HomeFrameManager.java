@@ -6,14 +6,14 @@ import Project.Panel.*;
 
 import java.sql.SQLException;
 
-public class HomeFrame extends javax.swing.JFrame {
+public class HomeFrameManager extends javax.swing.JFrame {
 
     public JpanelLoader jPanelLoader = new JpanelLoader();
 
-    public HomeFrame() {
+    public HomeFrameManager() {
         initComponents();
-        this.setExtendedState(HomeFrame.MAXIMIZED_BOTH);
-        this.setTitle("GreenStore POS");
+        this.setExtendedState(HomeFrameManager.MAXIMIZED_BOTH);
+        this.setTitle("GreenStore POS: Trang quản lý");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
@@ -253,16 +253,11 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_InvoicePanelLoadButtonActionPerformed
 
     private void ReportPanelLoadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportPanelLoadButtonActionPerformed
-        // TODO add your handling code here:
+        // trang báo cáo
+        ReportPanel reportPanel = new ReportPanel();
+        jPanelLoader.load(panelLoaderPanel,reportPanel);
     }//GEN-LAST:event_ReportPanelLoadButtonActionPerformed
 
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HomeFrame().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton EmployeePanelLoadButtom;
