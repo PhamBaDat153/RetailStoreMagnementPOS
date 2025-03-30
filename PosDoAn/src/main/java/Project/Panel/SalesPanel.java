@@ -422,12 +422,16 @@ public class SalesPanel extends javax.swing.JPanel {
         totalQuantityNumberLabel = new javax.swing.JLabel();
         saveButton = new javax.swing.JButton();
 
-        invoiceLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        basePanel.setBackground(new java.awt.Color(58, 71, 80));
+
+        invoiceLabel.setBackground(new java.awt.Color(0, 173, 181));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(238, 238, 238));
         jLabel1.setText("Hóa đơn số:");
 
         invoiceNumberLabel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        invoiceNumberLabel.setForeground(new java.awt.Color(238, 238, 238));
         invoiceNumberLabel.setText("00");
 
         javax.swing.GroupLayout invoiceLabelLayout = new javax.swing.GroupLayout(invoiceLabel);
@@ -451,21 +455,26 @@ public class SalesPanel extends javax.swing.JPanel {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setBackground(new java.awt.Color(0, 173, 181));
 
         customerLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        customerLabel.setForeground(new java.awt.Color(238, 238, 238));
         customerLabel.setText("Khách hàng:");
 
         productLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        productLabel.setForeground(new java.awt.Color(238, 238, 238));
         productLabel.setText("Sản phẩm:");
 
         quantityLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        quantityLabel.setForeground(new java.awt.Color(238, 238, 238));
         quantityLabel.setText("Số lượng:");
 
         productPriceLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        productPriceLabel.setForeground(new java.awt.Color(238, 238, 238));
         productPriceLabel.setText("Giá sản phẩm:");
 
         productPriceNumberLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        productPriceNumberLabel.setForeground(new java.awt.Color(238, 238, 238));
         productPriceNumberLabel.setText("00.00");
 
         customerNameComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -484,15 +493,19 @@ public class SalesPanel extends javax.swing.JPanel {
         });
 
         productTotalPriceLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        productTotalPriceLabel.setForeground(new java.awt.Color(238, 238, 238));
         productTotalPriceLabel.setText("Tổng giá sản phẩm:");
 
         productTotalPriceNumberLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        productTotalPriceNumberLabel.setForeground(new java.awt.Color(238, 238, 238));
         productTotalPriceNumberLabel.setText("00.00");
 
         productBarCodeLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        productBarCodeLabel.setForeground(new java.awt.Color(238, 238, 238));
         productBarCodeLabel.setText("Mã vạch:");
 
         productBarCodeNumberLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        productBarCodeNumberLabel.setForeground(new java.awt.Color(238, 238, 238));
         productBarCodeNumberLabel.setText("0000000000");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -500,7 +513,7 @@ public class SalesPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(customerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(customerNameComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -525,8 +538,7 @@ public class SalesPanel extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(productBarCodeLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(productBarCodeNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(productBarCodeNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -552,6 +564,7 @@ public class SalesPanel extends javax.swing.JPanel {
 
         tablePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        dataTable.setBackground(new java.awt.Color(238, 238, 238));
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -566,33 +579,42 @@ public class SalesPanel extends javax.swing.JPanel {
         tablePanel.setLayout(tablePanelLayout);
         tablePanelLayout.setHorizontalGroup(
             tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         tablePanelLayout.setVerticalGroup(
             tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
         );
 
-        buttonPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buttonPanel.setBackground(new java.awt.Color(238, 238, 238));
 
+        addProductButton.setBackground(new java.awt.Color(0, 173, 181));
         addProductButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        addProductButton.setForeground(new java.awt.Color(238, 238, 238));
         addProductButton.setText("Thêm sản phẩm vào giỏ hàng");
+        addProductButton.setFocusable(false);
         addProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addProductButtonActionPerformed(evt);
             }
         });
 
+        removeProductButton.setBackground(new java.awt.Color(0, 173, 181));
         removeProductButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        removeProductButton.setForeground(new java.awt.Color(238, 238, 238));
         removeProductButton.setText("Bỏ sản phẩm khỏi giỏ hàng");
+        removeProductButton.setFocusable(false);
         removeProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeProductButtonActionPerformed(evt);
             }
         });
 
+        removeAllButton.setBackground(new java.awt.Color(0, 173, 181));
         removeAllButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        removeAllButton.setForeground(new java.awt.Color(238, 238, 238));
         removeAllButton.setText("Bỏ toàn bộ");
+        removeAllButton.setFocusable(false);
         removeAllButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeAllButtonActionPerformed(evt);
@@ -606,9 +628,9 @@ public class SalesPanel extends javax.swing.JPanel {
             .addGroup(buttonPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addProductButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(removeProductButton, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                    .addComponent(removeAllButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+                    .addComponent(addProductButton, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
+                    .addComponent(removeProductButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(removeAllButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         buttonPanelLayout.setVerticalGroup(
@@ -620,10 +642,10 @@ public class SalesPanel extends javax.swing.JPanel {
                 .addComponent(removeProductButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(removeAllButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel5.setBackground(new java.awt.Color(238, 238, 238));
 
         paidAmountTextField.setText("0");
         paidAmountTextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -632,27 +654,36 @@ public class SalesPanel extends javax.swing.JPanel {
             }
         });
 
+        paidAmountLabel.setBackground(new java.awt.Color(48, 56, 65));
         paidAmountLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         paidAmountLabel.setText("Số tiền đã thanh toán");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setBackground(new java.awt.Color(0, 173, 181));
+        jPanel1.setForeground(new java.awt.Color(238, 238, 238));
 
         totalAmountLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        totalAmountLabel.setForeground(new java.awt.Color(238, 238, 238));
         totalAmountLabel.setText("Tổng số tiền:");
 
         changesLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        changesLabel.setForeground(new java.awt.Color(238, 238, 238));
         changesLabel.setText("Dư/Thiếu:");
 
         totalAmountNumberLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        totalAmountNumberLabel.setForeground(new java.awt.Color(238, 238, 238));
         totalAmountNumberLabel.setText("00.00");
 
         changesNumberLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        changesNumberLabel.setForeground(new java.awt.Color(238, 238, 238));
         changesNumberLabel.setText("00.00");
 
         totalQuantityLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        totalQuantityLabel.setForeground(new java.awt.Color(238, 238, 238));
         totalQuantityLabel.setText("Tổng số lượng:");
 
+        totalQuantityNumberLabel.setBackground(new java.awt.Color(0, 173, 181));
         totalQuantityNumberLabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        totalQuantityNumberLabel.setForeground(new java.awt.Color(238, 238, 238));
         totalQuantityNumberLabel.setText("00.00");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -669,7 +700,7 @@ public class SalesPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(changesLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(changesNumberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                        .addComponent(changesNumberLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(totalQuantityLabel)
@@ -722,8 +753,11 @@ public class SalesPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        saveButton.setBackground(new java.awt.Color(238, 238, 238));
         saveButton.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(0, 173, 181));
         saveButton.setText("Lưu");
+        saveButton.setFocusable(false);
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
@@ -733,35 +767,40 @@ public class SalesPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout basePanelLayout = new javax.swing.GroupLayout(basePanel);
         basePanel.setLayout(basePanelLayout);
         basePanelLayout.setHorizontalGroup(
-            basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(invoiceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, basePanelLayout.createSequentialGroup()
-                .addGroup(basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(basePanelLayout.createSequentialGroup()
+            basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(basePanelLayout.createSequentialGroup()
+                .addGroup(basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, basePanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tablePanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(basePanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tablePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addComponent(invoiceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         basePanelLayout.setVerticalGroup(
             basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(basePanelLayout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
                 .addComponent(invoiceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addGroup(basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(basePanelLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, basePanelLayout.createSequentialGroup()
                         .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(buttonPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(buttonPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(saveButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -772,10 +811,7 @@ public class SalesPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(basePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(basePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

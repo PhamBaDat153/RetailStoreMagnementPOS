@@ -32,16 +32,20 @@ public class HomeFrameManager extends javax.swing.JFrame {
         ReportPanelLoadButton = new javax.swing.JToggleButton();
         panelLoaderPanel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        buttonHolderPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        buttonHolderPanel.setBackground(new java.awt.Color(58, 71, 80));
 
+        customerPanelLoadButton.setBackground(new java.awt.Color(238, 238, 238));
         homeFrameButtonGroup.add(customerPanelLoadButton);
         customerPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        customerPanelLoadButton.setForeground(new java.awt.Color(48, 56, 65));
         customerPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\customer.png")); // NOI18N
         customerPanelLoadButton.setText("Khách hàng");
         customerPanelLoadButton.setAlignmentY(0.0F);
+        customerPanelLoadButton.setFocusable(false);
         customerPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         customerPanelLoadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,11 +53,14 @@ public class HomeFrameManager extends javax.swing.JFrame {
             }
         });
 
+        SupplierPanelLoadButton.setBackground(new java.awt.Color(238, 238, 238));
         homeFrameButtonGroup.add(SupplierPanelLoadButton);
         SupplierPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SupplierPanelLoadButton.setForeground(new java.awt.Color(48, 56, 65));
         SupplierPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\supplier.png")); // NOI18N
         SupplierPanelLoadButton.setText("Nhà cung ứng");
         SupplierPanelLoadButton.setAlignmentY(0.0F);
+        SupplierPanelLoadButton.setFocusable(false);
         SupplierPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SupplierPanelLoadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,11 +68,14 @@ public class HomeFrameManager extends javax.swing.JFrame {
             }
         });
 
+        ProductPanelLoadButton.setBackground(new java.awt.Color(238, 238, 238));
         homeFrameButtonGroup.add(ProductPanelLoadButton);
         ProductPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ProductPanelLoadButton.setForeground(new java.awt.Color(48, 56, 65));
         ProductPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\product.png")); // NOI18N
         ProductPanelLoadButton.setText("Sản phẩm");
         ProductPanelLoadButton.setAlignmentY(0.0F);
+        ProductPanelLoadButton.setFocusable(false);
         ProductPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ProductPanelLoadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,11 +83,14 @@ public class HomeFrameManager extends javax.swing.JFrame {
             }
         });
 
+        EmployeePanelLoadButtom.setBackground(new java.awt.Color(238, 238, 238));
         homeFrameButtonGroup.add(EmployeePanelLoadButtom);
         EmployeePanelLoadButtom.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        EmployeePanelLoadButtom.setForeground(new java.awt.Color(48, 56, 65));
         EmployeePanelLoadButtom.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\emp.png")); // NOI18N
         EmployeePanelLoadButtom.setText("Nhân viên");
         EmployeePanelLoadButtom.setAlignmentY(0.0F);
+        EmployeePanelLoadButtom.setFocusable(false);
         EmployeePanelLoadButtom.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         EmployeePanelLoadButtom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,11 +98,14 @@ public class HomeFrameManager extends javax.swing.JFrame {
             }
         });
 
+        SalesPanelLoadButton.setBackground(new java.awt.Color(238, 238, 238));
         homeFrameButtonGroup.add(SalesPanelLoadButton);
         SalesPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SalesPanelLoadButton.setForeground(new java.awt.Color(48, 56, 65));
         SalesPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\sales_menu.png")); // NOI18N
         SalesPanelLoadButton.setText("Giỏ hàng");
         SalesPanelLoadButton.setAlignmentY(0.0F);
+        SalesPanelLoadButton.setFocusable(false);
         SalesPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         SalesPanelLoadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,11 +113,14 @@ public class HomeFrameManager extends javax.swing.JFrame {
             }
         });
 
+        InvoicePanelLoadButton.setBackground(new java.awt.Color(238, 238, 238));
         homeFrameButtonGroup.add(InvoicePanelLoadButton);
         InvoicePanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InvoicePanelLoadButton.setForeground(new java.awt.Color(48, 56, 65));
         InvoicePanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\invo.png")); // NOI18N
         InvoicePanelLoadButton.setText("Hóa đơn");
         InvoicePanelLoadButton.setAlignmentY(0.0F);
+        InvoicePanelLoadButton.setFocusable(false);
         InvoicePanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         InvoicePanelLoadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,11 +132,14 @@ public class HomeFrameManager extends javax.swing.JFrame {
             }
         });
 
+        ReportPanelLoadButton.setBackground(new java.awt.Color(238, 238, 238));
         homeFrameButtonGroup.add(ReportPanelLoadButton);
         ReportPanelLoadButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ReportPanelLoadButton.setForeground(new java.awt.Color(48, 56, 65));
         ReportPanelLoadButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\reports.png")); // NOI18N
         ReportPanelLoadButton.setText("Báo cáo");
         ReportPanelLoadButton.setAlignmentY(0.0F);
+        ReportPanelLoadButton.setFocusable(false);
         ReportPanelLoadButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ReportPanelLoadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,33 +180,43 @@ public class HomeFrameManager extends javax.swing.JFrame {
                 .addComponent(InvoicePanelLoadButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ReportPanelLoadButton)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        panelLoaderPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelLoaderPanel.setBackground(new java.awt.Color(58, 71, 80));
 
         javax.swing.GroupLayout panelLoaderPanelLayout = new javax.swing.GroupLayout(panelLoaderPanel);
         panelLoaderPanel.setLayout(panelLoaderPanelLayout);
         panelLoaderPanelLayout.setHorizontalGroup(
             panelLoaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 872, Short.MAX_VALUE)
+            .addGap(0, 880, Short.MAX_VALUE)
         );
         panelLoaderPanelLayout.setVerticalGroup(
             panelLoaderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setBackground(new java.awt.Color(0, 173, 181));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(238, 238, 238));
+        jLabel2.setText("GreenStore Pos system");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -269,6 +301,7 @@ public class HomeFrameManager extends javax.swing.JFrame {
     private javax.swing.JPanel buttonHolderPanel;
     private javax.swing.JToggleButton customerPanelLoadButton;
     private javax.swing.ButtonGroup homeFrameButtonGroup;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel panelLoaderPanel;
     // End of variables declaration//GEN-END:variables

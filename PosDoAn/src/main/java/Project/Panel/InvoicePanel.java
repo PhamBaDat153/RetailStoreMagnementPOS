@@ -100,8 +100,11 @@ public class InvoicePanel extends javax.swing.JPanel {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(58, 71, 80));
+
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        dataTable.setBackground(new java.awt.Color(238, 238, 238));
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -120,12 +123,13 @@ public class InvoicePanel extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel3.setBackground(new java.awt.Color(0, 173, 181));
 
         invoiceLabel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        invoiceLabel.setForeground(new java.awt.Color(238, 238, 238));
         invoiceLabel.setText("Số hóa đơn:");
 
         invoiceTextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -135,6 +139,7 @@ public class InvoicePanel extends javax.swing.JPanel {
         });
 
         customerNameLabel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        customerNameLabel.setForeground(new java.awt.Color(238, 238, 238));
         customerNameLabel.setText("Tên khách hàng:");
 
         customerNameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -144,6 +149,7 @@ public class InvoicePanel extends javax.swing.JPanel {
         });
 
         statusLabel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        statusLabel.setForeground(new java.awt.Color(238, 238, 238));
         statusLabel.setText("Trạng thái hóa đơn");
 
         statusComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Đã thanh toán", "Chưa thanh toán" }));
@@ -153,9 +159,12 @@ public class InvoicePanel extends javax.swing.JPanel {
             }
         });
 
+        refreshButton.setBackground(new java.awt.Color(238, 238, 238));
         refreshButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        refreshButton.setForeground(new java.awt.Color(0, 173, 181));
         refreshButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\loading-arrow.png")); // NOI18N
         refreshButton.setText("refresh");
+        refreshButton.setFocusable(false);
         refreshButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshButtonActionPerformed(evt);
@@ -163,6 +172,7 @@ public class InvoicePanel extends javax.swing.JPanel {
         });
 
         invoiceLabelinfo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        invoiceLabelinfo.setForeground(new java.awt.Color(238, 238, 238));
         invoiceLabelinfo.setText("Lọc hóa đơn");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);

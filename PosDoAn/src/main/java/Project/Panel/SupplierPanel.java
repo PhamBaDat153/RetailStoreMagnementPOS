@@ -68,7 +68,9 @@ public class SupplierPanel extends javax.swing.JPanel {
         searchByNameTxtField = new javax.swing.JTextField();
         customerNameSearchLabel = new javax.swing.JLabel();
 
-        infomationPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        basePanel.setBackground(new java.awt.Color(58, 71, 80));
+
+        infomationPanel.setBackground(new java.awt.Color(238, 238, 238));
 
         nameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         nameLabel.setText("Tên:");
@@ -94,9 +96,12 @@ public class SupplierPanel extends javax.swing.JPanel {
             }
         });
 
+        saveButton.setBackground(new java.awt.Color(0, 173, 181));
         saveButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(238, 238, 238));
         saveButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\save.png")); // NOI18N
         saveButton.setText("Lưu");
+        saveButton.setFocusable(false);
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 try {
@@ -107,18 +112,24 @@ public class SupplierPanel extends javax.swing.JPanel {
             }
         });
 
+        deleteButton.setBackground(new java.awt.Color(0, 173, 181));
         deleteButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(238, 238, 238));
         deleteButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\delete.png")); // NOI18N
         deleteButton.setText("Xóa");
+        deleteButton.setFocusable(false);
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
             }
         });
 
+        updateButton.setBackground(new java.awt.Color(0, 173, 181));
         updateButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        updateButton.setForeground(new java.awt.Color(238, 238, 238));
         updateButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\update.png")); // NOI18N
         updateButton.setText("Cập nhât");
+        updateButton.setFocusable(false);
         updateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateButtonActionPerformed(evt);
@@ -177,6 +188,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                 .addContainerGap(129, Short.MAX_VALUE))
         );
 
+        dataTable.setBackground(new java.awt.Color(238, 238, 238));
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -195,7 +207,7 @@ public class SupplierPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(dataTable);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setBackground(new java.awt.Color(238, 238, 238));
 
         searchLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchLabel1.setText("Tìm kiếm thông tin nhà cung ứng");
@@ -215,13 +227,15 @@ public class SupplierPanel extends javax.swing.JPanel {
             }
 
             private void searchByIDTxtFieldActionPerformed(ActionEvent evt) {
-
             }
         });
 
+        searchButton.setBackground(new java.awt.Color(0, 173, 181));
         searchButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        searchButton.setForeground(new java.awt.Color(238, 238, 238));
         searchButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\phamb\\OneDrive\\Documents\\GitHub\\RetailStoreMagnementPOS\\PosDoAn\\src\\main\\resources\\Images\\search x30.png")); // NOI18N
         searchButton.setText("Tìm");
+        searchButton.setFocusable(false);
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
@@ -279,6 +293,7 @@ public class SupplierPanel extends javax.swing.JPanel {
         });
 
         customerNameSearchLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        customerNameSearchLabel.setForeground(new java.awt.Color(238, 238, 238));
         customerNameSearchLabel.setText("Lọc tên :");
 
         javax.swing.GroupLayout basePanelLayout = new javax.swing.GroupLayout(basePanel);
@@ -292,7 +307,7 @@ public class SupplierPanel extends javax.swing.JPanel {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
                     .addGroup(basePanelLayout.createSequentialGroup()
                         .addComponent(customerNameSearchLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
