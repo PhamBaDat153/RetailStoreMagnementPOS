@@ -8,7 +8,7 @@ CREATE TABLE Customer (
     telephone_number VARCHAR(10) NOT NULL UNIQUE
 );
 
--- Tự tạo ID khách hàng
+-- Tự tạo ID 
 DELIMITER //
 CREATE TRIGGER trg_customer_id
 BEFORE INSERT ON Customer
@@ -24,3 +24,175 @@ BEGIN
     SET NEW.customer_ID = CONCAT('KH', LPAD(next_num, 7, '0'));
 END//
 DELIMITER ;
+
+-- Tạo bảng nhà cung ứng
+CREATE TABLE supplier (
+    supplier_ID VARCHAR(10) PRIMARY KEY,
+    supplier_name NVARCHAR(50) NOT NULL,
+    telephone_number VARCHAR(10) NOT NULL UNIQUE
+);
+
+-- Trigger tự động tạo ID khi thêm mới
+DELIMITER //
+CREATE TRIGGER trg_supplier_id
+BEFORE INSERT ON supplier
+FOR EACH ROW
+BEGIN
+    DECLARE next_num INT;
+    
+    -- Tìm số tiếp theo từ các ID hiện có
+    SELECT IFNULL(MAX(CAST(SUBSTRING(supplier_ID, 4) AS UNSIGNED)), 0) + 1 
+    INTO next_num FROM supplier;
+    
+    -- Gán ID mới với định dạng NCUxxxxxx (ví dụ: NUC000001)
+    SET NEW.supplier_ID = CONCAT('NCU', LPAD(next_num, 6, '0'));
+END//
+DELIMITER ;
+
+# Tạo bảng nhân viên
+CREATE TABLE employee (
+    employee_ID VARCHAR(10) PRIMARY KEY,
+    employee_name NVARCHAR(50) NOT NULL,
+    telephone_number VARCHAR(10) NOT NULL UNIQUE,
+    position VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL
+);
+
+-- Trigger tự động tạo ID nhân viên khi thêm mới
+DELIMITER //
+CREATE TRIGGER trg_employee_id
+BEFORE INSERT ON employee
+FOR EACH ROW
+BEGIN
+    DECLARE next_num INT;
+    
+    -- Tìm số tiếp theo từ các ID hiện có
+    SELECT IFNULL(MAX(CAST(SUBSTRING(employee_ID, 3) AS UNSIGNED)), 0) + 1 
+    INTO next_num FROM employee;
+    
+    -- Gán ID mới với định dạng NVxxxxxx (ví dụ: NV000001)
+    SET NEW.employee_ID = CONCAT('NV', LPAD(next_num, 6, '0'));
+END//
+DELIMITER ;
+
+# Tạo bảng sản phẩm
+CREATE TABLE product (
+    product_ID VARCHAR(10) PRIMARY KEY,
+    product_name NVARCHAR(50) NOT NULL,
+    bar_code VARCHAR(10) NOT NULL UNIQUE,
+    price DECIMAL(10,2) NOT NULL,  
+    quantity INT NOT NULL,      
+    supplier_ID VARCHAR(10) NOT NULL,
+    
+    -- Khóa ngoại tham chiếu đến bảng supplier
+    FOREIGN KEY (supplier_ID) REFERENCES supplier(supplier_ID)
+);
+
+DELIMITER //
+CREATE TRIGGER trg_product_id
+BEFORE INSERT ON product
+FOR EACH ROW
+BEGIN
+    DECLARE next_num INT;
+    
+    -- Tìm số tiếp theo từ các ID hiện có
+    SELECT IFNULL(MAX(CAST(SUBSTRING(product_ID, 3) AS UNSIGNED)), 0) + 1 
+    INTO next_num FROM product;
+    
+    -- Gán ID mới (vd: SP000001)
+    SET NEW.product_ID = CONCAT('SP', LPAD(next_num, 6, '0'));
+END//
+DELIMITER ;
+
+
+# Tạo bảng giỏ hàng 
+CREATE TABLE cart (
+    cart_ID VARCHAR(12) PRIMARY KEY NOT NULL,
+    invoice_ID VARCHAR(12) NOT NULL,
+    product_name NVARCHAR(100) NOT NULL,
+    bar_code VARCHAR(20) NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),
+    unit_price DECIMAL(10,2) NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL
+);
+
+-- 2️⃣ Tạo bảng sinh ID tự động (tránh lỗi tranh chấp)
+CREATE TABLE cart_id_generator (
+    id INT AUTO_INCREMENT PRIMARY KEY
+);
+
+-- 3️⃣ Tạo trigger tự động sinh cart_ID dạng GHxxxxxx
+DELIMITER //
+CREATE TRIGGER trg_cart_id
+BEFORE INSERT ON cart
+FOR EACH ROW
+BEGIN
+    DECLARE next_id INT;
+
+    -- Chèn vào bảng auto-increment để lấy ID tiếp theo
+    INSERT INTO cart_id_generator VALUES (NULL);
+    SET next_id = LAST_INSERT_ID();
+
+    -- Định dạng thành GHxxxxxx
+    SET NEW.cart_ID = CONCAT('GH', LPAD(next_id, 6, '0'));
+
+    -- Tự động tính total_price
+    SET NEW.total_price = NEW.unit_price * NEW.quantity;
+END//
+DELIMITER ;
+
+-- 4️⃣ Khi xóa dữ liệu giỏ hàng, reset ID để tránh trùng lặp
+DELIMITER //
+CREATE TRIGGER trg_reset_cart_id
+AFTER DELETE ON cart
+FOR EACH ROW
+BEGIN
+    -- Kiểm tra nếu giỏ hàng rỗng, reset ID
+    IF (SELECT COUNT(*) FROM cart) = 0 THEN
+        TRUNCATE TABLE cart_id_generator;
+    END IF;
+END//
+DELIMITER ;
+
+-- Tạo bảng sales
+CREATE TABLE sales (
+    sale_Id VARCHAR(12) PRIMARY KEY NOT NULL,
+    invoice_ID VARCHAR(12) NOT NULL,
+    customer_ID VARCHAR(10),
+    customer_name NVARCHAR(50) NOT NULL,
+    total_quantity INT,
+    total_bill DECIMAL(10,2) NOT NULL,
+    status VARCHAR(30) NOT NULL,
+    change_or_lack DECIMAL(10,2) NOT NULL,
+
+    FOREIGN KEY (customer_ID) REFERENCES customer(customer_ID)
+);
+
+-- Bảng quản lý ID tự động tăng
+CREATE TABLE sales_id_generator (
+    id INT AUTO_INCREMENT PRIMARY KEY
+);
+
+-- Tạo Trigger để tự động sinh sale_Id
+DELIMITER //
+CREATE TRIGGER trg_sales_id
+BEFORE INSERT ON sales
+FOR EACH ROW
+BEGIN
+    DECLARE next_id INT;
+
+    -- Chèn vào bảng auto-increment để lấy ID tiếp theo
+    INSERT INTO sales_id_generator VALUES (NULL);
+    SET next_id = LAST_INSERT_ID();
+
+    -- Gán giá trị ID theo định dạng HDxxxxxxx
+    SET NEW.sale_Id = CONCAT('HD', LPAD(next_id, 7, '0'));
+END//
+DELIMITER ;
+
+create table extra(
+	extra_ID int primary key auto_increment,
+    value varchar(10) not null
+);
+
+INSERT INTO extra (value) VALUES ('1')
